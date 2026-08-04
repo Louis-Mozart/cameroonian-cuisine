@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Un Voyage dans les Repas Camerounais | A Journey Through Cameroonian Cuisine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Lato:wght@300;400;700&family=Lobster&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Lato', sans-serif; background: #fdf8f0; color: #2d2d2d; line-height: 1.7; }
+    :root {
+      --green-dark: #1a3a07; --green: #274e13; --green-light: #3d6b1a;
+      --amber: #e07b00; --gold: #f5a623; --cream: #fdf8f0;
+      --text: #2d2d2d; --text-light: #666; --border: #e8d5b0;
+    }
+    #lang-bar { position: fixed; top: 0; right: 0; z-index: 1000; display: flex; gap: 6px; padding: 10px 18px; background: rgba(26,58,7,.88); backdrop-filter: blur(6px); border-bottom-left-radius: 12px; }
+    .lang-btn { padding: 5px 14px; border: 2px solid var(--gold); border-radius: 20px; background: transparent; color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; transition: all .25s; }
+    .lang-btn.active, .lang-btn:hover { background: var(--gold); color: var(--green-dark); }
+    [data-lang="en"] .fr, [data-lang="fr"] .en { display: none; }
+    .hero { min-height: 100vh; background: linear-gradient(160deg, rgba(26,58,7,.82) 0%, rgba(224,123,0,.65) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px 80px; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--cream)); }
+    .hero-flag { display: flex; gap: 0; border-radius: 6px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
+    .hero-flag span { width: 28px; height: 60px; display: block; }
+    .f1 { background: #007a5e; } .f2 { background: #ce1126; } .f3 { background: #fcd116; }
+    .hero-eyebrow { font-family: 'Lato', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+    .hero h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.12; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.4); margin-bottom: 14px; }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub { font-size: clamp(1rem, 2.2vw, 1.35rem); color: rgba(255,255,255,.88); font-style: italic; max-width: 600px; margin: 0 auto 32px; }
+    .hero-author { font-family: 'Lobster', cursive; font-size: 1.5rem; color: var(--gold); }
+    .hero-author span { font-family: 'Lato', sans-serif; font-size: .85rem; font-weight: 300; color: rgba(255,255,255,.7); display: block; margin-top: 4px; letter-spacing: .12em; }
+    .scroll-cue { position: absolute; bottom: 90px; animation: bounce 2s infinite; color: var(--gold); font-size: 1.8rem; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+    .site-nav { position: sticky; top: 0; z-index: 900; background: var(--green-dark); padding: 0 24px; display: flex; align-items: center; overflow-x: auto; scrollbar-width: none; box-shadow: 0 2px 16px rgba(0,0,0,.3); }
+    .site-nav::-webkit-scrollbar { display: none; }
+    .site-nav a { white-space: nowrap; padding: 16px 18px; color: rgba(255,255,255,.75); text-decoration: none; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-bottom: 3px solid transparent; transition: all .2s; }
+    .site-nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+    .welcome-section { max-width: 820px; margin: 0 auto; padding: 80px 24px; text-align: center; }
+    .section-chip { display: inline-block; background: var(--green); color: var(--gold); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 5px 16px; border-radius: 20px; margin-bottom: 20px; }
+    .welcome-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,3rem); color: var(--green); margin-bottom: 24px; }
+    .welcome-section p { font-size: 1.05rem; color: var(--text-light); margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
+    .welcome-section p strong { color: var(--green); }
+    .divider { width: 80px; height: 4px; background: linear-gradient(to right, var(--green), var(--gold)); border-radius: 2px; margin: 32px auto; }
+    .toc-section { padding: 40px 24px 80px; background: var(--green-dark); }
+    .toc-section .section-chip { background: var(--gold); color: var(--green-dark); }
+    .toc-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.8rem); color: #fff; text-align: center; margin-bottom: 40px; }
+    .toc-grid { display: grid; max-width: 1200px; margin: 0 auto; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 18px; }
+    .toc-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 18px 14px; text-align: center; text-decoration: none; color: #fff; transition: all .25s; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .toc-card:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
+    .toc-card .num { font-size: .7rem; font-weight: 700; letter-spacing: .1em; opacity: .6; }
+    .toc-card .name { font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 700; line-height: 1.3; }
+    .recipes-wrapper { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
+    .recipe-block { margin-bottom: 100px; scroll-margin-top: 60px; }
+    .recipe-block:nth-child(even) .recipe-layout { flex-direction: row-reverse; }
+    .recipe-header { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+    .recipe-num { width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--green), var(--amber)); display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 900; color: #fff; letter-spacing: .04em; }
+    .recipe-title-group { flex: 1; }
+    .recipe-title-group h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3.5vw, 2.4rem); color: var(--green); line-height: 1.15; margin-bottom: 4px; }
+    .recipe-title-group .en-title { font-size: .95rem; color: var(--amber); font-style: italic; font-weight: 400; }
+    .recipe-divider { height: 3px; background: linear-gradient(to right, var(--green), var(--gold), transparent); border-radius: 2px; margin-bottom: 28px; }
+    .recipe-layout { display: flex; gap: 36px; align-items: flex-start; flex-wrap: wrap; }
+    .recipe-img-col { flex: 0 0 300px; max-width: 100%; }
+    .recipe-img-col img { width: 100%; height: 320px; object-fit: cover; border-radius: 18px; box-shadow: 0 12px 40px rgba(0,0,0,.18); display: block; }
+    .recipe-meta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 14px; }
+    .meta-badge { background: var(--green); color: #fff; font-size: .78rem; padding: 5px 13px; border-radius: 20px; font-weight: 700; display: flex; align-items: center; gap: 5px; }
+    .recipe-content-col { flex: 1; min-width: 280px; }
+    .bilingual-block { margin-bottom: 24px; }
+    .lang-label { font-size: .68rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding: 3px 10px; border-radius: 10px; display: inline-block; margin-bottom: 6px; }
+    .lang-label.fr-label { background: #e8f5e9; color: var(--green); }
+    .lang-label.en-label { background: #fff3e0; color: var(--amber); }
+    .desc-box { background: #fff; border-left: 4px solid var(--green); border-radius: 0 12px 12px 0; padding: 16px 18px; font-size: .98rem; color: var(--text); margin-bottom: 10px; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+    .desc-box.en-box { border-left-color: var(--amber); }
+    .section-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; color: var(--green); margin: 22px 0 10px; display: flex; align-items: center; gap: 8px; }
+    .section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .section-title.en-title-small { color: var(--amber); }
+    .ingredients-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 20px; }
+    .ingredient-item { display: flex; align-items: flex-start; gap: 7px; font-size: .9rem; color: var(--text); padding: 4px 0; border-bottom: 1px dashed var(--border); }
+    .ingredient-item::before { content: '\25C6'; color: var(--gold); font-size: .55rem; margin-top: 5px; flex-shrink: 0; }
+    .steps-list { list-style: none; }
+    .steps-list li { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 14px; padding: 12px 14px; background: #fff; border-radius: 10px; box-shadow: 0 1px 5px rgba(0,0,0,.05); font-size: .93rem; }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; background: var(--green); color: #fff; display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 900; }
+    .steps-list.en-steps .step-num { background: var(--amber); }
+    .sub-ing-title { font-weight: 700; font-size: .88rem; color: var(--green-light); margin: 10px 0 4px; letter-spacing: .04em; }
+    .pairings-box { background: linear-gradient(135deg, #e8f5e9, #fffde7); border-radius: 12px; padding: 14px 18px; margin-top: 16px; }
+    .pairings-box h4 { font-family: 'Playfair Display', serif; font-size: .98rem; color: var(--green); margin-bottom: 8px; }
+    .pairings-box ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+    .pairings-box ul li { background: #fff; border: 1px solid var(--border); border-radius: 20px; padding: 4px 12px; font-size: .82rem; color: var(--green); }
+    .tip-box { margin-top: 20px; background: linear-gradient(135deg, var(--green-dark), var(--green)); border-radius: 14px; padding: 18px 20px; color: #fff; display: flex; gap: 12px; align-items: flex-start; }
+    .tip-box .tip-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .tip-box p { font-size: .88rem; line-height: 1.6; opacity: .92; }
+    .tip-box strong { color: var(--gold); font-family: 'Lobster', cursive; font-size: 1.05rem; display: block; margin-bottom: 4px; }
+    .recipe-sep { max-width: 960px; margin: 0 auto 60px; height: 2px; background: linear-gradient(to right, transparent, var(--border), transparent); }
+    footer { background: var(--green-dark); color: rgba(255,255,255,.7); text-align: center; padding: 48px 24px; }
+    footer .footer-logo { font-family: 'Lobster', cursive; font-size: 2rem; color: var(--gold); margin-bottom: 12px; }
+    footer p { font-size: .88rem; margin-bottom: 6px; }
+    footer .heart { color: var(--gold); }
+    @media(max-width:640px){ .recipe-layout { flex-direction: column !important; } .recipe-img-col { flex: unset; width: 100%; } .ingredients-grid { grid-template-columns: 1fr; } .toc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media print { #lang-bar, .site-nav, .scroll-cue { display: none !important; } .recipe-block { page-break-before: always; } }
+  </style>
+</head>
+<body data-lang="fr">
+<div id="lang-bar">
+  <button class="lang-btn active" onclick="setLang('fr')">&#127467;&#127479; FR</button>
+  <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
+</div>
+
+<section class="hero">
+  <div class="hero-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></div>
+  <p class="hero-eyebrow fr">Cuisine Authentique Camerounaise</p>
+  <p class="hero-eyebrow en">Authentic Cameroonian Cuisine</p>
+  <h1>
+    <span class="fr">Un <span>Voyage</span> dans les<br>Repas Camerounais</span>
+    <span class="en">A <span>Journey</span> Through<br>Cameroonian Cuisine</span>
+  </h1>
+  <p class="hero-sub fr">16 recettes camerounaises faciles, m&ecirc;me loin du pays</p>
+  <p class="hero-sub en">16 easy Cameroonian recipes &mdash; no matter where you are in the world</p>
+  <div class="hero-author">
+    T&eacute;claire Writes
+    <span class="fr">auteure &middot; chef du c&oelig;ur</span>
+    <span class="en">author &middot; soulful cook</span>
+  </div>
+  <div class="scroll-cue">&#8595;</div>
+</section>
+
+<nav class="site-nav">
+  <a href="#welcome">Bienvenue</a>
+  <a href="#ndole">Ndol&eacute;</a>
+  <a href="#eru">Eru</a>
+  <a href="#beignets">Beignets</a>
+  <a href="#mbongo">Mbongo</a>
+  <a href="#koki">Koki</a>
+  <a href="#pouletdg">Poulet DG</a>
+  <a href="#pistache">Pistache</a>
+  <a href="#okok">Okok</a>
+  <a href="#couscous">Couscous</a>
+  <a href="#plantain">Plantain</a>
+  <a href="#poisson">Poisson</a>
+  <a href="#jollof">Jollof</a>
+  <a href="#taro">Taro</a>
+  <a href="#pile">Pil&eacute;</a>
+  <a href="#spaghetti">Spaghetti</a>
+  <a href="#kondre">Kondr&eacute;</a>
+</nav>
+
+<section class="welcome-section" id="welcome">
+  <span class="section-chip fr">Bienvenue</span>
+  <span class="section-chip en">Welcome</span>
+  <h2 class="fr">Bonne lecture et bon app&eacute;tit&nbsp;!</h2>
+  <h2 class="en">Happy reading and bon app&eacute;tit!</h2>
+  <div class="divider"></div>
+  <p class="fr">Bienvenue dans <strong>Un voyage dans les repas camerounais</strong>. &Agrave; travers cet ebook, je vous invite &agrave; d&eacute;couvrir les saveurs authentiques de la cuisine camerounaise, o&ugrave; que vous soyez dans le monde.</p>
+  <p class="en">Welcome to <strong>A Journey Through Cameroonian Cuisine</strong>. Through this collection, I invite you to discover the authentic flavours of Cameroonian cooking, wherever you are in the world.</p>
+  <p class="fr">Que vous viviez en Europe, en Afrique ou ailleurs, ces recettes ont &eacute;t&eacute; s&eacute;lectionn&eacute;es pour leur simplicit&eacute; et leur caract&egrave;re traditionnel. Certaines utilisent des ingr&eacute;dients faciles &agrave; trouver hors du Cameroun, afin que chacun puisse retrouver le go&ucirc;t du pays &agrave; sa table.</p>
+  <p class="en">Whether you live in Europe, Africa or elsewhere, these recipes were chosen for their simplicity and traditional character. Some call for ingredients easy to find outside Cameroon, so everyone can bring a taste of home to their table.</p>
+  <p class="fr">Ce livre est destin&eacute; aussi bien aux d&eacute;butants qu&rsquo;aux passionn&eacute;s de cuisine africaine. Chaque recette est expliqu&eacute;e &eacute;tape par &eacute;tape pour vous permettre de cuisiner avec confiance et plaisir.</p>
+  <p class="en">This book is for beginners and African cuisine enthusiasts alike. Every recipe is explained step by step so you can cook with confidence and joy.</p>
+</section>
+
+<section class="toc-section">
+  <div style="text-align:center;margin-bottom:12px;">
+    <span class="section-chip fr">Sommaire</span>
+    <span class="section-chip en">Table of Contents</span>
+  </div>
+  <h2 class="fr">Toutes les recettes</h2>
+  <h2 class="en">All Recipes</h2>
+  <div class="toc-grid">
+    <a href="#ndole" class="toc-card"><span class="num">01</span><span class="name">Ndol&eacute;</span></a>
+    <a href="#eru" class="toc-card"><span class="num">02</span><span class="name">Eru &amp; Water Fufu</span></a>
+    <a href="#beignets" class="toc-card"><span class="num">03</span><span class="name fr">Beignets Haricots</span><span class="name en">Bean Fritters</span></a>
+    <a href="#mbongo" class="toc-card"><span class="num">04</span><span class="name">Mbongo Tchobi</span></a>
+    <a href="#koki" class="toc-card"><span class="num">05</span><span class="name">Koki</span></a>
+    <a href="#pouletdg" class="toc-card"><span class="num">06</span><span class="name">Poulet DG</span></a>
+    <a href="#pistache" class="toc-card"><span class="num">07</span><span class="name fr">Sauce Pistache</span><span class="name en">Pumpkin Seed Sauce</span></a>
+    <a href="#okok" class="toc-card"><span class="num">08</span><span class="name">Okok</span></a>
+    <a href="#couscous" class="toc-card"><span class="num">09</span><span class="name fr">Couscous de Ma&iuml;s</span><span class="name en">Corn Couscous</span></a>
+    <a href="#plantain" class="toc-card"><span class="num">10</span><span class="name fr">Plantain &amp; Haricots</span><span class="name en">Plantain &amp; Red Beans</span></a>
+    <a href="#poisson" class="toc-card"><span class="num">11</span><span class="name fr">Poisson Brais&eacute;</span><span class="name en">Grilled Fish</span></a>
+    <a href="#jollof" class="toc-card"><span class="num">12</span><span class="name">Jollof Rice</span></a>
+    <a href="#taro" class="toc-card"><span class="num">13</span><span class="name fr">Taro &amp; Sauce Jaune</span><span class="name en">Taro &amp; Yellow Sauce</span></a>
+    <a href="#pile" class="toc-card"><span class="num">14</span><span class="name fr">Pil&eacute; Pommes de Terre</span><span class="name en">Mashed Potato &amp; Beans</span></a>
+    <a href="#spaghetti" class="toc-card"><span class="num">15</span><span class="name fr">Spaghettis Saut&eacute;s</span><span class="name en">Stir-Fry Pasta</span></a>
+    <a href="#kondre" class="toc-card"><span class="num">16</span><span class="name">Kondr&eacute;</span></a>
+  </div>
+</section>
+
+<div class="recipes-wrapper">
+
+<!-- ══ 1. NDOLÉ ══ -->
+<article class="recipe-block" id="ndole">
+  <div class="recipe-header">
+    <div class="recipe-num">01</div>
+    <div class="recipe-title-group">
+      <h2>Ndol&eacute;</h2>
+      <div class="en-title en">Ndol&eacute; &mdash; Cameroon&rsquo;s National Stew</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image14.jpg" alt="Ndol&eacute;" loading="lazy"/>
+      <div class="recipe-meta">
+        <span class="meta-badge">&#9201; 1h 30min</span>
+        <span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span>
+      </div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le ndol&eacute; est l&rsquo;un des plats les plus c&eacute;l&egrave;bres du Cameroun. Originaire du peuple Sawa, pr&eacute;par&eacute; &agrave; base de feuilles de ndol&eacute;, d&rsquo;arachides et de viande ou de poisson, ce plat offre un m&eacute;lange unique de saveurs qui fait la fiert&eacute; de la cuisine camerounaise.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Ndol&eacute; is one of Cameroon&rsquo;s most celebrated dishes. Originating with the Sawa people, it is made with ndol&eacute; leaves, groundnuts and meat or fish &mdash; a unique blend of flavours that is the pride of Cameroonian cuisine.</div>
+      <div class="section-title fr">Ingr&eacute;dients</div>
+      <div class="section-title en-title-small en">Ingredients</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g feuilles de ndol&eacute;</span><span class="en">500 g ndol&eacute; leaves</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande de b&oelig;uf</span><span class="en">300 g beef</span></div>
+        <div class="ingredient-item"><span class="fr">200 g crevettes</span><span class="en">200 g shrimp</span></div>
+        <div class="ingredient-item"><span class="fr">200 g poisson fum&eacute;</span><span class="en">200 g smoked fish</span></div>
+        <div class="ingredient-item"><span class="fr">150 g p&acirc;te d&rsquo;arachide</span><span class="en">150 g peanut paste</span></div>
+        <div class="ingredient-item"><span class="fr">1 gros oignon, 2 gousses d&rsquo;ail</span><span class="en">1 large onion, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile v&eacute;g&eacute;tale</span><span class="en">4 tbsp vegetable oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel, poivre, eau</span><span class="en">Salt, pepper, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div>
+      <div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver soigneusement les feuilles de ndol&eacute;, les faire bouillir quelques minutes pour r&eacute;duire l&rsquo;amertume. &Eacute;goutter et r&eacute;server.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire la viande avec l&rsquo;oignon, l&rsquo;ail, le sel et le poivre jusqu&rsquo;&agrave; ce qu&rsquo;elle soit tendre.</span></li>
+        <li><span class="step-num">3</span><span>Incorporer le poisson fum&eacute; et les crevettes &agrave; la viande&nbsp;; laisser cuire quelques minutes.</span></li>
+        <li><span class="step-num">4</span><span>D&eacute;layer la p&acirc;te d&rsquo;arachide dans un peu d&rsquo;eau et l&rsquo;ajouter &agrave; la pr&eacute;paration. M&eacute;langer soigneusement.</span></li>
+        <li><span class="step-num">5</span><span>Ajouter les feuilles de ndol&eacute;, laisser mijoter &agrave; feu doux ~30&nbsp;min. Ajouter l&rsquo;huile et ajuster l&rsquo;assaisonnement.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash the ndol&eacute; leaves thoroughly, then boil briefly to reduce bitterness. Drain and set aside.</span></li>
+        <li><span class="step-num">2</span><span>Cook the beef with onion, garlic, salt and pepper until tender.</span></li>
+        <li><span class="step-num">3</span><span>Add the smoked fish and shrimp to the meat; cook a few more minutes.</span></li>
+        <li><span class="step-num">4</span><span>Dissolve the peanut paste in a little water and stir it into the pot.</span></li>
+        <li><span class="step-num">5</span><span>Add the ndol&eacute; leaves, simmer on low ~30&nbsp;min. Add oil and adjust seasoning to taste.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements recommand&eacute;s</h4>
+        <h4 class="en">&#127859; Recommended Sides</h4>
+        <ul>
+          <li class="fr">Plantains m&ucirc;rs frits</li><li class="en">Fried ripe plantains</li>
+          <li>Miondo</li><li>Bobolo</li>
+          <li class="fr">Riz blanc</li><li class="en">White rice</li>
+        </ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Pour un ndol&eacute; encore plus savoureux, faites blanchir les feuilles deux fois et utilisez du beurre de cacahu&egrave;te naturel.</span><span class="en">For an even richer ndol&eacute;, blanch the leaves twice and use natural peanut butter.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 2. ERU ══ -->
+<article class="recipe-block" id="eru">
+  <div class="recipe-header">
+    <div class="recipe-num">02</div>
+    <div class="recipe-title-group">
+      <h2>Eru &amp; Water Fufu</h2>
+      <div class="en-title en">Eru &amp; Water Fufu &mdash; South-West Classic</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image7.jpg" alt="Eru et Water Fufu" loading="lazy"/>
+      <div class="recipe-meta">
+        <span class="meta-badge">&#9201; 1h 45min</span>
+        <span class="meta-badge">&#128101; 4&ndash;6 <span class="fr">pers.</span><span class="en">serv.</span></span>
+      </div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Originaire du Sud-Ouest du Cameroun, l&rsquo;eru est un plat traditionnel r&eacute;put&eacute; pour sa richesse en saveurs et sa valeur nutritive. Associ&eacute; au water fufu, il est souvent servi lors des c&eacute;r&eacute;monies familiales et des grandes occasions.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">From the South-West of Cameroon, eru is a traditional dish renowned for its depth of flavour and nutritional value. Paired with water fufu, it graces family ceremonies and grand celebrations.</div>
+      <div class="sub-ing-title fr">Pour l&rsquo;eru</div><div class="sub-ing-title en">For the eru</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g feuilles d&rsquo;eru &eacute;minc&eacute;es</span><span class="en">500 g sliced eru leaves</span></div>
+        <div class="ingredient-item"><span class="fr">1 kg waterleaf</span><span class="en">1 kg waterleaf</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande de b&oelig;uf</span><span class="en">300 g beef</span></div>
+        <div class="ingredient-item"><span class="fr">200 g poisson fum&eacute;</span><span class="en">200 g smoked fish</span></div>
+        <div class="ingredient-item"><span class="fr">200 ml huile de palme</span><span class="en">200 ml palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">2 cubes d&rsquo;assaisonnement, sel</span><span class="en">2 stock cubes, salt</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour le water fufu</div><div class="sub-ing-title en">For the water fufu</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de manioc ferment&eacute;e</span><span class="en">500 g fermented cassava flour</span></div>
+        <div class="ingredient-item"><span class="fr">Eau</span><span class="en">Water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration de l&rsquo;Eru</div>
+      <div class="section-title en-title-small en">Eru Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver soigneusement les feuilles d&rsquo;eru et la waterleaf.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire la viande avec le sel et les assaisonnements jusqu&rsquo;&agrave; ce qu&rsquo;elle soit tendre.</span></li>
+        <li><span class="step-num">3</span><span>Incorporer la waterleaf, puis les feuilles d&rsquo;eru.</span></li>
+        <li><span class="step-num">4</span><span>Verser l&rsquo;huile de palme et m&eacute;langer d&eacute;licatement.</span></li>
+        <li><span class="step-num">5</span><span>Laisser cuire &agrave; feu doux environ 20 minutes.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash the eru leaves and waterleaf thoroughly.</span></li>
+        <li><span class="step-num">2</span><span>Cook the beef with salt and seasoning cubes until tender.</span></li>
+        <li><span class="step-num">3</span><span>Add the waterleaf, then the eru leaves.</span></li>
+        <li><span class="step-num">4</span><span>Pour in the palm oil and mix gently.</span></li>
+        <li><span class="step-num">5</span><span>Simmer on low heat for about 20 minutes.</span></li>
+      </ol>
+      <div class="section-title fr">Pr&eacute;paration du Water Fufu</div>
+      <div class="section-title en-title-small en">Water Fufu Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>M&eacute;langer progressivement la farine de manioc avec de l&rsquo;eau.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire &agrave; feu moyen en remuant constamment.</span></li>
+        <li><span class="step-num">3</span><span>Continuer jusqu&rsquo;&agrave; obtenir une p&acirc;te lisse et homog&egrave;ne.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Gradually mix the cassava flour with water.</span></li>
+        <li><span class="step-num">2</span><span>Cook over medium heat, stirring constantly.</span></li>
+        <li><span class="step-num">3</span><span>Continue until you obtain a smooth, uniform dough.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">L&rsquo;eru ne se cuit jamais avec de l&rsquo;eau &mdash; laissez l&rsquo;huile de palme et le jus naturel des feuilles faire tout le travail&nbsp;!</span><span class="en">Eru is never cooked with water &mdash; let the palm oil and the natural moisture from the leaves do all the work!</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 3. BEIGNETS ══ -->
+<article class="recipe-block" id="beignets">
+  <div class="recipe-header">
+    <div class="recipe-num">03</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Beignets Haricots</h2>
+      <h2 class="en">Bean Fritters &amp; Beans</h2>
+      <div class="en-title en">The favourite Cameroonian breakfast</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image3.jpg" alt="Beignets Haricots" loading="lazy"/>
+      <div class="recipe-meta">
+        <span class="meta-badge">&#9201; 1h 15min</span>
+        <span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span>
+      </div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le beignet haricots est l&rsquo;un des petits-d&eacute;jeuners les plus appr&eacute;ci&eacute;s au Cameroun. Vendu dans les rues, les &eacute;coles et les march&eacute;s, ce repas simple et &eacute;conomique est savoureux et nourrissant.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Bean fritters are one of Cameroon&rsquo;s most beloved breakfasts. Sold on streets, at schools and markets, this simple, budget-friendly meal is flavourful and filling.</div>
+      <div class="sub-ing-title fr">Pour les beignets</div><div class="sub-ing-title en">For the fritters</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de bl&eacute;</span><span class="en">500 g wheat flour</span></div>
+        <div class="ingredient-item"><span class="fr">1 sachet levure boulang&egrave;re</span><span class="en">1 packet dry yeast</span></div>
+        <div class="ingredient-item"><span class="fr">50 g sucre, 1 pinc&eacute;e de sel</span><span class="en">50 g sugar, pinch of salt</span></div>
+        <div class="ingredient-item"><span class="fr">Eau ti&egrave;de, huile de friture</span><span class="en">Warm water, frying oil</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour les haricots</div><div class="sub-ing-title en">For the beans</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g haricots rouges ou blancs</span><span class="en">500 g red or white beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 c.&agrave;.s. huile, sel</span><span class="en">1 onion, 2 tbsp oil, salt</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div>
+      <div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Trier et laver les haricots. Les cuire jusqu&rsquo;&agrave; ce qu&rsquo;ils soient tendres. Ajouter l&rsquo;oignon &eacute;minc&eacute;, l&rsquo;huile et le sel&nbsp;; mijoter quelques minutes.</span></li>
+        <li><span class="step-num">2</span><span>M&eacute;langer la farine, la levure, le sucre et le sel. Ajouter l&rsquo;eau ti&egrave;de progressivement pour obtenir une p&acirc;te souple. Laisser reposer 1 heure.</span></li>
+        <li><span class="step-num">3</span><span>Faire chauffer l&rsquo;huile. Pr&eacute;lever de petites portions de p&acirc;te et frire jusqu&rsquo;&agrave; obtenir une belle couleur dor&eacute;e.</span></li>
+        <li><span class="step-num">4</span><span>&Eacute;goutter sur du papier absorbant. Servir chauds avec les haricots et une tasse de th&eacute; ou de caf&eacute;.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Sort and wash the beans. Cook until tender. Add sliced onion, oil and salt; simmer a few minutes.</span></li>
+        <li><span class="step-num">2</span><span>Mix flour, yeast, sugar and salt. Gradually add warm water until you have a soft dough. Rest for 1 hour.</span></li>
+        <li><span class="step-num">3</span><span>Heat oil. Scoop small portions of dough and fry until golden brown.</span></li>
+        <li><span class="step-num">4</span><span>Drain on kitchen paper. Serve hot with the beans and a cup of tea or coffee.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Laissez bien reposer la p&acirc;te &mdash; c&rsquo;est le secret d&rsquo;un beignet bien a&eacute;r&eacute; et moelleux.</span><span class="en">Always let the dough rest properly &mdash; that&rsquo;s the secret to light, fluffy fritters.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 4. MBONGO ══ -->
+<article class="recipe-block" id="mbongo">
+  <div class="recipe-header">
+    <div class="recipe-num">04</div>
+    <div class="recipe-title-group">
+      <h2>Mbongo Tchobi</h2>
+      <div class="en-title en">Mbongo Tchobi &mdash; Black Spice Fish Stew</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image13.jpg" alt="Mbongo Tchobi" loading="lazy"/>
+      <div class="recipe-meta">
+        <span class="meta-badge">&#9201; 1h 20min</span>
+        <span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span>
+      </div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le Mbongo Tchobi est un plat traditionnel du peuple Bassa. Reconnaissable &agrave; sa couleur noire caract&eacute;ristique, il est pr&eacute;par&eacute; &agrave; partir d&rsquo;un m&eacute;lange d&rsquo;&eacute;pices soigneusement grill&eacute;es. Son go&ucirc;t intense et parfum&eacute; en fait l&rsquo;un des plats les plus embl&eacute;matiques de la gastronomie camerounaise.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Mbongo Tchobi is a traditional dish of the Bassa people. Unmistakable by its deep black colour, it is made from a blend of carefully toasted spices. Its intense, aromatic taste makes it one of the most iconic dishes in Cameroonian gastronomy.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 poisson frais (carpe, capitaine ou tilapia)</span><span class="en">1 fresh fish (carp, capitaine or tilapia)</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. &eacute;pices Mbongo Tchobi</span><span class="en">3 tbsp Mbongo Tchobi spice mix</span></div>
+        <div class="ingredient-item"><span class="fr">2 tomates, 1 oignon, 2 gousses d&rsquo;ail</span><span class="en">2 tomatoes, 1 onion, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, sel, poivre, eau</span><span class="en">4 tbsp oil, salt, pepper, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div>
+      <div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Nettoyer le poisson, faire des incisions sur les c&ocirc;t&eacute;s, saler l&eacute;g&egrave;rement et r&eacute;server.</span></li>
+        <li><span class="step-num">2</span><span>Mixer les tomates, l&rsquo;oignon et l&rsquo;ail&nbsp;; ajouter les &eacute;pices Mbongo et m&eacute;langer jusqu&rsquo;&agrave; une p&acirc;te homog&egrave;ne.</span></li>
+        <li><span class="step-num">3</span><span>D&eacute;poser le poisson dans une marmite&nbsp;; verser la pr&eacute;paration, un peu d&rsquo;eau et l&rsquo;huile.</span></li>
+        <li><span class="step-num">4</span><span>Laisser cuire &agrave; feu moyen ~40&nbsp;min. V&eacute;rifier la cuisson, ajuster le sel et servir chaud.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Clean the fish, score both sides, lightly salt and set aside.</span></li>
+        <li><span class="step-num">2</span><span>Blend tomatoes, onion and garlic; add the Mbongo spice mix and stir into a smooth paste.</span></li>
+        <li><span class="step-num">3</span><span>Place the fish in a pot; pour over the paste, a little water and oil.</span></li>
+        <li><span class="step-num">4</span><span>Cook over medium heat ~40&nbsp;min. Check doneness, adjust salt and serve hot.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements recommand&eacute;s</h4><h4 class="en">&#127859; Recommended Sides</h4>
+        <ul><li>Bobolo</li><li>Miondo</li><li class="fr">Plantain bouilli</li><li class="en">Boiled plantain</li><li class="fr">Riz blanc</li><li class="en">White rice</li></ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">La couleur noire vient des &eacute;pices grill&eacute;es &mdash; torr&eacute;fiez vos &eacute;pices &agrave; feu doux avant de les moudre.</span><span class="en">The black colour comes from toasted spices &mdash; gently toast your spices before grinding them.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 5. KOKI ══ -->
+<article class="recipe-block" id="koki">
+  <div class="recipe-header">
+    <div class="recipe-num">05</div>
+    <div class="recipe-title-group"><h2>Koki</h2><div class="en-title en">Koki &mdash; Steamed Bean Cake</div></div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image4.jpg" alt="Koki" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 2h</span><span class="meta-badge">&#128101; 4&ndash;6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le koki est une sp&eacute;cialit&eacute; camerounaise pr&eacute;par&eacute;e &agrave; partir de haricots blancs d&eacute;cortiqu&eacute;s et d&rsquo;huile de palme. Tr&egrave;s nourrissant, il est souvent servi avec des bananes plantains m&ucirc;res ou du manioc.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Koki is a Cameroonian speciality made from hulled white beans and palm oil, steamed in banana leaves. Hearty and comforting, its mild flavour and soft texture make it a family favourite.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g haricots blancs d&eacute;cortiqu&eacute;s</span><span class="en">500 g hulled white beans</span></div>
+        <div class="ingredient-item"><span class="fr">250 ml huile de palme rouge</span><span class="en">250 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel selon le go&ucirc;t, eau</span><span class="en">Salt to taste, water</span></div>
+        <div class="ingredient-item"><span class="fr">Feuilles de bananier ou moules</span><span class="en">Banana leaves or moulds</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Tremper les haricots plusieurs heures. Retirer les peaux et rincer soigneusement.</span></li>
+        <li><span class="step-num">2</span><span>&Eacute;craser les haricots, ajouter un peu d&rsquo;eau pour une p&acirc;te lisse. Incorporer le sel.</span></li>
+        <li><span class="step-num">3</span><span>Verser progressivement l&rsquo;huile de palme tout en m&eacute;langeant jusqu&rsquo;&agrave; une p&acirc;te homog&egrave;ne.</span></li>
+        <li><span class="step-num">4</span><span>R&eacute;partir dans les feuilles de bananier ou des moules. Cuire &agrave; la vapeur ~1h&nbsp;30.</span></li>
+        <li><span class="step-num">5</span><span>Laisser ti&eacute;dir avant de d&eacute;guster.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Soak the beans for several hours. Remove the skins and rinse thoroughly.</span></li>
+        <li><span class="step-num">2</span><span>Mash the beans, add a little water to form a smooth paste. Mix in salt.</span></li>
+        <li><span class="step-num">3</span><span>Gradually pour in the palm oil while stirring to form a uniform mixture.</span></li>
+        <li><span class="step-num">4</span><span>Spoon into banana leaves (or moulds). Steam for ~1.5 hours.</span></li>
+        <li><span class="step-num">5</span><span>Allow to cool slightly before serving.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements</h4><h4 class="en">&#127859; Recommended Sides</h4>
+        <ul><li class="fr">Plantains m&ucirc;rs bouillies</li><li class="en">Boiled ripe plantains</li><li class="fr">Manioc bouilli</li><li class="en">Boiled cassava</li><li class="fr">Patates douces</li><li class="en">Sweet potatoes</li></ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Plus la p&acirc;te est fine et bien battue, plus votre koki sera l&eacute;ger et savoureux.</span><span class="en">The smoother and better-beaten your paste, the lighter and more flavourful your koki will be.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 6. POULET DG ══ -->
+<article class="recipe-block" id="pouletdg">
+  <div class="recipe-header">
+    <div class="recipe-num">06</div>
+    <div class="recipe-title-group"><h2>Poulet DG</h2><div class="en-title en">Poulet DG &mdash; &ldquo;Director General&rdquo; Chicken</div></div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image10.jpg" alt="Poulet DG" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 15min</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le Poulet DG, qui signifie &laquo;&nbsp;Directeur G&eacute;n&eacute;ral&nbsp;&raquo;, est un plat raffin&eacute; associant du poulet tendre, des plantains m&ucirc;rs frits et des l&eacute;gumes color&eacute;s. Servi aussi bien lors des f&ecirc;tes familiales que dans les restaurants.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Poulet DG, meaning &ldquo;Director General&rdquo;, is a refined dish combining tender chicken, fried ripe plantains and colourful vegetables. It graces both festive family tables and upscale restaurants.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 poulet d&eacute;coup&eacute; en morceaux</span><span class="en">1 chicken, cut into pieces</span></div>
+        <div class="ingredient-item"><span class="fr">4 plantains m&ucirc;rs</span><span class="en">4 ripe plantains</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 poivron vert, 1 poivron rouge</span><span class="en">2 carrots, 1 green &amp; 1 red pepper</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 tomates, 2 gousses d&rsquo;ail</span><span class="en">1 onion, 2 tomatoes, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, sel, poivre, 1 cube</span><span class="en">4 tbsp oil, salt, pepper, 1 stock cube</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver et assaisonner le poulet (ail, sel, poivre, oignon). Laisser mariner 30&nbsp;min.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire le poulet puis le faire l&eacute;g&egrave;rement dorer dans un peu d&rsquo;huile.</span></li>
+        <li><span class="step-num">3</span><span>&Eacute;plucher les plantains, les couper en rondelles ou b&acirc;tonnets et les frire jusqu&rsquo;&agrave; dorure.</span></li>
+        <li><span class="step-num">4</span><span>Faire revenir les carottes, les poivrons et les tomates dans une po&ecirc;le.</span></li>
+        <li><span class="step-num">5</span><span>Ajouter le poulet aux l&eacute;gumes, incorporer les plantains frits. M&eacute;langer d&eacute;licatement et mijoter quelques minutes.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash and marinate the chicken with garlic, salt, pepper and onion for 30 min.</span></li>
+        <li><span class="step-num">2</span><span>Cook the chicken, then lightly brown it in a little oil.</span></li>
+        <li><span class="step-num">3</span><span>Peel the plantains, cut into rounds or sticks and fry until golden.</span></li>
+        <li><span class="step-num">4</span><span>Saut&eacute; the carrots, peppers and tomatoes in a pan.</span></li>
+        <li><span class="step-num">5</span><span>Add the chicken to the vegetables, fold in the fried plantains. Stir gently and simmer briefly.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Servez dans un grand plat color&eacute; &mdash; la pr&eacute;sentation fait partie du plaisir du Poulet DG&nbsp;!</span><span class="en">Serve in a large colourful dish &mdash; presentation is part of the Poulet DG experience!</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 7. SAUCE PISTACHE ══ -->
+<article class="recipe-block" id="pistache">
+  <div class="recipe-header">
+    <div class="recipe-num">07</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Sauce Pistache &amp; Couscous de Manioc</h2>
+      <h2 class="en">Pumpkin Seed Sauce &amp; Cassava Couscous</h2>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image1.jpg" alt="Sauce Pistache" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 30min</span><span class="meta-badge">&#128101; 4&ndash;6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">La sauce pistache, pr&eacute;par&eacute;e &agrave; partir de graines de courge moul&ucirc;es, offre une texture riche et un go&ucirc;t d&eacute;licat. Accompagn&eacute;e de couscous de manioc, elle constitue un repas nourrissant et convivial.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Pumpkin seed sauce, made from ground squash seeds, has a rich texture and a delicate taste. Served with cassava couscous, it makes a hearty, convivial meal.</div>
+      <div class="sub-ing-title fr">Pour la sauce pistache</div><div class="sub-ing-title en">For the sauce</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g graines de courge moul&ucirc;es</span><span class="en">500 g ground pumpkin seeds</span></div>
+        <div class="ingredient-item"><span class="fr">300 g b&oelig;uf ou poisson fum&eacute;</span><span class="en">300 g beef or smoked fish</span></div>
+        <div class="ingredient-item"><span class="fr">200 g crevettes fra&icirc;ches ou s&eacute;ch&eacute;es</span><span class="en">200 g fresh or dried shrimp</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 gousses d&rsquo;ail, 1 piment (opt.), sel, eau</span><span class="en">1 onion, 2 garlic cloves, 1 chilli (opt.), salt, water</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour le couscous</div><div class="sub-ing-title en">For the couscous</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de manioc, eau</span><span class="en">500 g cassava flour, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>M&eacute;langer la pistache moul&ucirc;e avec un peu d&rsquo;eau&nbsp;; ajouter l&rsquo;oignon et l&rsquo;ail &eacute;cras&eacute;s, puis la viande ou le poisson.</span></li>
+        <li><span class="step-num">2</span><span>D&eacute;poser dans une marmite&nbsp;; ajouter les crevettes. Cuire &agrave; feu moyen ~45&nbsp;min. Assaisonner.</span></li>
+        <li><span class="step-num">3</span><span>Pour le couscous&nbsp;: faire chauffer de l&rsquo;eau, verser progressivement la farine, remuer jusqu&rsquo;&agrave; une p&acirc;te souple et homog&egrave;ne.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Mix ground pumpkin seeds with a little water; add crushed onion and garlic, then the meat or fish.</span></li>
+        <li><span class="step-num">2</span><span>Transfer to a pot; add shrimp. Cook over medium heat ~45 min. Season with salt and chilli.</span></li>
+        <li><span class="step-num">3</span><span>For the couscous: heat water, gradually pour in the flour, stirring until you get a smooth, pliable dough.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Ajoutez les graines progressivement pour &eacute;viter les grumeaux &mdash; une texture lisse est le secret d&rsquo;une bonne sauce pistache.</span><span class="en">Add the ground seeds gradually to avoid lumps &mdash; a smooth texture is the secret to a great pumpkin seed sauce.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 8. OKOK ══ -->
+<article class="recipe-block" id="okok">
+  <div class="recipe-header">
+    <div class="recipe-num">08</div>
+    <div class="recipe-title-group"><h2>Okok</h2><div class="en-title en">Okok &mdash; B&euml;ti Leaf &amp; Peanut Stew</div></div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image12.jpg" alt="Okok" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 30min</span><span class="meta-badge">&#128101; 4&ndash;6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">L&rsquo;Okok est un plat traditionnel des peuples B&euml;ti du Centre et du Sud du Cameroun. Pr&eacute;par&eacute; &agrave; base de feuilles d&rsquo;okok finement &eacute;cras&eacute;es et de p&acirc;te d&rsquo;arachide, ce mets est appr&eacute;ci&eacute; pour son go&ucirc;t riche et sa valeur nutritive.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Okok is a traditional dish of the B&euml;ti peoples of Central and Southern Cameroon. Made from finely pounded okok leaves and peanut paste, it is prized for its rich flavour and nutritional value.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g feuilles d&rsquo;okok finement hach&eacute;es</span><span class="en">500 g finely chopped okok leaves</span></div>
+        <div class="ingredient-item"><span class="fr">300 g p&acirc;te d&rsquo;arachide</span><span class="en">300 g peanut paste</span></div>
+        <div class="ingredient-item"><span class="fr">200 g poisson fum&eacute; ou viande</span><span class="en">200 g smoked fish or meat</span></div>
+        <div class="ingredient-item"><span class="fr">150 g crevettes s&eacute;ch&eacute;es ou fra&icirc;ches</span><span class="en">150 g dried or fresh shrimp</span></div>
+        <div class="ingredient-item"><span class="fr">200 ml huile de palme</span><span class="en">200 ml palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel, cube, eau</span><span class="en">Salt, stock cube, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver les feuilles d&rsquo;okok. Les m&eacute;langer avec l&rsquo;huile dans une marmite jusqu&rsquo;&agrave; m&eacute;lange homog&egrave;ne.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire le poisson fum&eacute; et la viande.</span></li>
+        <li><span class="step-num">3</span><span>Incorporer la p&acirc;te d&rsquo;arachide aux feuilles&nbsp;; ajouter un peu d&rsquo;eau. Remuer jusqu&rsquo;&agrave; une pr&eacute;paration homog&egrave;ne.</span></li>
+        <li><span class="step-num">4</span><span>Ajouter les crevettes et l&rsquo;huile de palme. Mijoter &agrave; feu doux ~30&nbsp;min. Ajuster le sel.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash the okok leaves. Mix them with the oil in a pot until well combined.</span></li>
+        <li><span class="step-num">2</span><span>Cook the smoked fish and meat.</span></li>
+        <li><span class="step-num">3</span><span>Stir the peanut paste into the leaves; add a little water and mix until smooth.</span></li>
+        <li><span class="step-num">4</span><span>Add the shrimp and palm oil. Simmer on low heat ~30 min. Adjust salt to taste.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements</h4><h4 class="en">&#127859; Recommended Sides</h4>
+        <ul><li>Bobolo</li><li class="fr">Manioc bouilli</li><li class="en">Boiled cassava</li><li class="fr">Plantain m&ucirc;r bouilli</li><li class="en">Boiled ripe plantain</li></ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Hachez les feuilles tr&egrave;s finement pour une texture velout&eacute;e &mdash; c&rsquo;est ce qui distingue un bon okok.</span><span class="en">Chop the leaves very finely for a velvety texture &mdash; that&rsquo;s what sets a great okok apart.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 9. COUSCOUS MAÏS ══ -->
+<article class="recipe-block" id="couscous">
+  <div class="recipe-header">
+    <div class="recipe-num">09</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Couscous de Ma&iuml;s &amp; L&eacute;gumes</h2>
+      <h2 class="en">Corn Couscous &amp; Vegetables</h2>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image16.jpg" alt="Couscous de Ma&iuml;s" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le couscous de ma&iuml;s est tr&egrave;s appr&eacute;ci&eacute; dans les r&eacute;gions septentrionales du Cameroun. L&eacute;ger, nourrissant et facile &agrave; pr&eacute;parer, il accompagne parfaitement les sauces aux l&eacute;gumes, &agrave; la viande ou au poisson.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Corn couscous is a staple of Northern Cameroon. Light, nourishing and easy to prepare, it pairs perfectly with vegetable, meat or fish sauces.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de ma&iuml;s, eau, sel</span><span class="en">500 g corn flour, water, salt</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 chou moyen</span><span class="en">2 carrots, 1 medium cabbage</span></div>
+        <div class="ingredient-item"><span class="fr">1 poivron vert, 2 tomates, 1 oignon</span><span class="en">1 green pepper, 2 tomatoes, 1 onion</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande ou poisson, 3 c.&agrave;.s. huile, sel, poivre</span><span class="en">300 g meat or fish, 3 tbsp oil, salt, pepper</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Humidifier l&eacute;g&egrave;rement la farine de ma&iuml;s&nbsp;; la travailler avec les mains pour former de petits grains. Cuire &agrave; la vapeur ~30&nbsp;min.</span></li>
+        <li><span class="step-num">2</span><span>Laver et d&eacute;couper tous les l&eacute;gumes. Les bouillir.</span></li>
+        <li><span class="step-num">3</span><span>Faire revenir l&rsquo;oignon dans l&rsquo;huile. Ajouter les tomates, puis les autres l&eacute;gumes. Incorporer la viande cuite, assaisonner et mijoter.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Lightly moisten the corn flour; work with your hands to form small granules. Steam for ~30 min.</span></li>
+        <li><span class="step-num">2</span><span>Wash and chop all vegetables. Parboil them.</span></li>
+        <li><span class="step-num">3</span><span>Saut&eacute; the onion in oil. Add tomatoes, then the other vegetables. Stir in the cooked meat, season and simmer.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Ne mouillez pas trop la farine &mdash; les grains doivent rester s&eacute;par&eacute;s pour un couscous bien a&eacute;r&eacute;.</span><span class="en">Don&rsquo;t over-wet the flour before steaming &mdash; the grains should stay separate for a light, fluffy couscous.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 10. PLANTAIN ══ -->
+<article class="recipe-block" id="plantain">
+  <div class="recipe-header">
+    <div class="recipe-num">10</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Frites de Plantain M&ucirc;r &amp; Haricots Rouges</h2>
+      <h2 class="en">Fried Ripe Plantain &amp; Red Beans</h2>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image9.jpg" alt="Plantain et Haricots" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 15min</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le plantain m&ucirc;r et les haricots rouges forment une association incontournable de la cuisine camerounaise. Repas &eacute;quilibr&eacute;, appr&eacute;ci&eacute; pour son go&ucirc;t l&eacute;g&egrave;rement sucr&eacute; et sa richesse en prot&eacute;ines v&eacute;g&eacute;tales.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Fried ripe plantain and red beans are an iconic pairing in Cameroonian cuisine. This balanced meal is loved for its slightly sweet taste and high plant-protein content.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">4 plantains m&ucirc;rs</span><span class="en">4 ripe plantains</span></div>
+        <div class="ingredient-item"><span class="fr">500 g haricots rouges</span><span class="en">500 g red beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 gros oignon, 2 tomates</span><span class="en">1 large onion, 2 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. huile, 1 cube (opt.), sel, eau</span><span class="en">3 tbsp oil, 1 stock cube (opt.), salt, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Trier, laver et tremper les haricots. Les cuire dans l&rsquo;eau jusqu&rsquo;&agrave; ce qu&rsquo;ils soient tendres.</span></li>
+        <li><span class="step-num">2</span><span>&Eacute;mincer l&rsquo;oignon, couper les tomates en d&eacute;s. Faire revenir dans l&rsquo;huile, ajouter les haricots cuits. Assaisonner.</span></li>
+        <li><span class="step-num">3</span><span>&Eacute;plucher les plantains m&ucirc;rs, les couper et les frire dans l&rsquo;huile bien chaude jusqu&rsquo;&agrave; dorure.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Sort, wash and soak the beans. Cook in water until tender.</span></li>
+        <li><span class="step-num">2</span><span>Slice onion, dice tomatoes. Saut&eacute; in oil, add the cooked beans. Season to taste.</span></li>
+        <li><span class="step-num">3</span><span>Peel the ripe plantains, cut and fry in hot oil until golden brown.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Choisissez des plantains bien noirs pour des frites plus sucr&eacute;es et caramel&eacute;s&nbsp;!</span><span class="en">Choose very black-skinned plantains for sweeter, caramelised fritters!</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 11. POISSON ══ -->
+<article class="recipe-block" id="poisson">
+  <div class="recipe-header">
+    <div class="recipe-num">11</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Poisson Brais&eacute; &agrave; la Camerounaise</h2>
+      <h2 class="en">Cameroonian-Style Grilled Fish</h2>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image5.jpg" alt="Poisson Brais&eacute;" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 20min</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le poisson brais&eacute; est l&rsquo;un des plats les plus populaires du Cameroun. Pr&eacute;par&eacute; avec des &eacute;pices parfum&eacute;es et grill&eacute; &agrave; la perfection, son go&ucirc;t fum&eacute; et relev&eacute; en fait un incontournable des maquis camerounais.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Grilled fish is one of the most popular dishes in Cameroon. Marinated in fragrant spices and grilled to perfection, its smoky, spicy taste makes it a must-have at Cameroonian restaurants.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">2 poissons entiers (tilapia, capitaine ou maquereau)</span><span class="en">2 whole fish (tilapia, capitaine or mackerel)</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 3 tomates</span><span class="en">2 onions, 3 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">2 gousses d&rsquo;ail, 1 morceau de gingembre</span><span class="en">2 garlic cloves, 1 piece ginger</span></div>
+        <div class="ingredient-item"><span class="fr">1 piment (opt.), 4 c.&agrave;.s. huile, sel, poivre</span><span class="en">1 chilli (opt.), 4 tbsp oil, salt, pepper</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Nettoyer les poissons, faire des entailles sur les c&ocirc;t&eacute;s et saler l&eacute;g&egrave;rement.</span></li>
+        <li><span class="step-num">2</span><span>Mixer les oignons, les tomates, l&rsquo;ail, le gingembre et le piment. Ajouter sel, poivre et huile. Bien m&eacute;langer.</span></li>
+        <li><span class="step-num">3</span><span>Badigeonner g&eacute;n&eacute;reusement les poissons avec la marinade. Laisser reposer 30&nbsp;min.</span></li>
+        <li><span class="step-num">4</span><span>Faire griller au barbecue, au four ou sur une grille jusqu&rsquo;&agrave; ce qu&rsquo;ils soient bien dor&eacute;s.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Clean the fish, score both sides and lightly salt.</span></li>
+        <li><span class="step-num">2</span><span>Blend onions, tomatoes, garlic, ginger and chilli. Add salt, pepper and oil. Mix well.</span></li>
+        <li><span class="step-num">3</span><span>Generously coat the fish with the marinade. Rest for 30 min.</span></li>
+        <li><span class="step-num">4</span><span>Grill on a barbecue, in the oven or on a griddle until nicely charred and golden.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements</h4><h4 class="en">&#127859; Recommended Sides</h4>
+        <ul><li>Bobolo</li><li class="fr">Plantains brais&eacute;s</li><li class="en">Grilled plantains</li><li>Miondo</li></ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Laissez mariner le poisson toute une nuit pour des saveurs encore plus intenses.</span><span class="en">Marinate the fish overnight for even deeper, more intense flavours.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 12. JOLLOF ══ -->
+<article class="recipe-block" id="jollof">
+  <div class="recipe-header">
+    <div class="recipe-num">12</div>
+    <div class="recipe-title-group"><h2>Jollof Rice au Poulet</h2><div class="en-title en">Jollof Rice with Chicken</div></div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image2.jpg" alt="Jollof Rice" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h 15min</span><span class="meta-badge">&#128101; 4&ndash;6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le Jollof Rice est un riz parfum&eacute; cuit dans une sauce tomate &eacute;pic&eacute;e. Tr&egrave;s populaire en Afrique de l&rsquo;Ouest et au Cameroun, il est incontournable lors des f&ecirc;tes et repas de famille.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Jollof Rice is fragrant rice cooked in a spiced tomato sauce. Wildly popular across West Africa and Cameroon, it is a staple of celebrations, birthdays and family gatherings.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g riz long grain</span><span class="en">500 g long-grain rice</span></div>
+        <div class="ingredient-item"><span class="fr">1 poulet d&eacute;coup&eacute;</span><span class="en">1 chicken, cut into pieces</span></div>
+        <div class="ingredient-item"><span class="fr">4 tomates fra&icirc;ches, 1 bo&icirc;te concentr&eacute;</span><span class="en">4 fresh tomatoes, 1 can tomato paste</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 1 poivron rouge</span><span class="en">2 onions, 1 red pepper</span></div>
+        <div class="ingredient-item"><span class="fr">2 gousses d&rsquo;ail, 1 morceau de gingembre</span><span class="en">2 garlic cloves, 1 piece ginger</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, 1 cube, sel, poivre, 1&nbsp;L bouillon</span><span class="en">4 tbsp oil, 1 stock cube, salt, pepper, 1&nbsp;L stock</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Assaisonner le poulet (sel, ail, gingembre, poivre). Le faire cuire puis r&eacute;server.</span></li>
+        <li><span class="step-num">2</span><span>Mixer les tomates, les oignons, le poivron, l&rsquo;ail et le gingembre. Faire revenir dans l&rsquo;huile, ajouter le concentr&eacute; de tomate, cuire ~15&nbsp;min.</span></li>
+        <li><span class="step-num">3</span><span>Laver le riz. L&rsquo;ajouter &agrave; la sauce, verser le bouillon chaud. Couvrir et cuire &agrave; feu doux jusqu&rsquo;&agrave; absorption totale.</span></li>
+        <li><span class="step-num">4</span><span>Ajouter les morceaux de poulet, m&eacute;langer d&eacute;licatement et laisser reposer avant de servir.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Season the chicken with salt, garlic, ginger and pepper. Cook, then set aside.</span></li>
+        <li><span class="step-num">2</span><span>Blend tomatoes, onions, pepper, garlic and ginger. Saut&eacute; in oil, add tomato paste, cook ~15 min.</span></li>
+        <li><span class="step-num">3</span><span>Wash the rice. Add to the sauce, pour in hot stock. Cover and cook on low until fully absorbed.</span></li>
+        <li><span class="step-num">4</span><span>Fold in the chicken pieces, stir gently and rest before serving.</span></li>
+      </ol>
+      <div class="pairings-box">
+        <h4 class="fr">&#127859; Accompagnements</h4><h4 class="en">&#127859; Recommended Sides</h4>
+        <ul><li class="fr">Salade de l&eacute;gumes frais</li><li class="en">Fresh vegetable salad</li><li class="fr">Bananes plantains frites</li><li class="en">Fried plantains</li></ul>
+      </div>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Ne soulevez pas le couvercle pendant la cuisson du riz &mdash; laissez la vapeur faire le travail&nbsp;!</span><span class="en">Don&rsquo;t lift the lid while the rice cooks &mdash; let the steam do the work!</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 13. TARO ══ -->
+<article class="recipe-block" id="taro">
+  <div class="recipe-header">
+    <div class="recipe-num">13</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Taro &amp; Sauce Jaune</h2>
+      <h2 class="en">Taro &amp; Yellow Sauce</h2>
+      <div class="en-title en">West-Cameroonian ceremonial classic</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image11.jpg" alt="Taro et Sauce Jaune" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 2h</span><span class="meta-badge">&#128101; 6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le taro &agrave; la sauce jaune est l&rsquo;un des plats les plus embl&eacute;matiques de l&rsquo;Ouest et du Nord-Ouest du Cameroun. Tr&egrave;s pr&eacute;sent lors des mariages, fun&eacute;railles et c&eacute;r&eacute;monies traditionnelles, il est appr&eacute;ci&eacute; pour sa sauce onctueuse &agrave; base d&rsquo;huile de palme et de pierre de potasse.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Taro with yellow sauce is one of the most iconic dishes of West and North-West Cameroon. A centrepiece at weddings, funerals and traditional ceremonies, it is celebrated for its creamy sauce made from palm oil and potash.</div>
+      <div class="sub-ing-title fr">Pour le taro</div><div class="sub-ing-title en">For the taro</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">2 kg de taro, eau, sel</span><span class="en">2 kg taro, water, salt</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour la sauce jaune</div><div class="sub-ing-title en">For the yellow sauce</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 ml huile de palme rouge</span><span class="en">500 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande de b&oelig;uf</span><span class="en">300 g beef</span></div>
+        <div class="ingredient-item"><span class="fr">200 g peau de b&oelig;uf kanda (opt.)</span><span class="en">200 g beef skin kanda (opt.)</span></div>
+        <div class="ingredient-item"><span class="fr">1 morceau pierre de potasse (kanwa), sel</span><span class="en">1 piece potash stone (kanwa), salt</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver les tubercules. Les cuire avec leur peau dans l&rsquo;eau sal&eacute;e. Une fois cuits, &eacute;plucher et piler.</span></li>
+        <li><span class="step-num">2</span><span>Faire cuire la viande et le kanda avec du sel. Conserver le bouillon.</span></li>
+        <li><span class="step-num">3</span><span>Dissoudre la pierre de potasse dans un peu d&rsquo;eau et filtrer. Verser progressivement l&rsquo;huile de palme dans une bassine, ajouter doucement la solution de potasse en remuant &mdash; la sauce prendra une couleur jaune-orang&eacute;e et une texture cr&eacute;meuse.</span></li>
+        <li><span class="step-num">4</span><span>Ajouter le bouillon, incorporer la viande. Ajuster le sel et m&eacute;langer d&eacute;licatement.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash the corms. Cook in their skins in salted water. Once cooked, peel and pound.</span></li>
+        <li><span class="step-num">2</span><span>Cook the beef and kanda with salt. Reserve the broth.</span></li>
+        <li><span class="step-num">3</span><span>Dissolve the potash in a little water and strain. Gradually pour the palm oil into a bowl, slowly add the potash solution while stirring &mdash; the sauce will turn yellow-orange and creamy.</span></li>
+        <li><span class="step-num">4</span><span>Add the broth, fold in the meat. Adjust salt and stir gently.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">La r&eacute;action entre l&rsquo;huile de palme et la potasse est une vraie magie culinaire &mdash; versez lentement et remuez sans arr&ecirc;t.</span><span class="en">The reaction between palm oil and potash is a true piece of culinary magic &mdash; pour slowly and stir constantly.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 14. PILÉ ══ -->
+<article class="recipe-block" id="pile">
+  <div class="recipe-header">
+    <div class="recipe-num">14</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Pil&eacute; de Pommes de Terre &amp; Haricots</h2>
+      <h2 class="en">Pounded Potato &amp; Black Beans</h2>
+      <div class="en-title en">A West Cameroonian comfort dish</div>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image6.jpg" alt="Pil&eacute; de Pommes de Terre" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 1h</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le pil&eacute; de pommes de terre est un plat traditionnel de l&rsquo;Ouest Cameroun. Tr&egrave;s appr&eacute;ci&eacute; pour sa simplicit&eacute; et son go&ucirc;t authentique, il associe des pommes de terre tendres &agrave; de l&rsquo;haricot noir et &agrave; l&rsquo;huile de palme.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Pounded potato is a traditional dish from West Cameroon. Loved for its simplicity and authentic taste, it combines tender potatoes with black beans and palm oil &mdash; a hearty family meal.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 kg pommes de terre</span><span class="en">1 kg potatoes</span></div>
+        <div class="ingredient-item"><span class="fr">300 g haricots noirs</span><span class="en">300 g black beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 gros oignon</span><span class="en">1 large onion</span></div>
+        <div class="ingredient-item"><span class="fr">150 ml huile de palme rouge</span><span class="en">150 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel, 1 piment (opt.)</span><span class="en">Salt, 1 chilli (opt.)</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>&Eacute;plucher, couper et cuire les pommes de terre dans l&rsquo;eau sal&eacute;e jusqu&rsquo;&agrave; ce qu&rsquo;elles soient tendres.</span></li>
+        <li><span class="step-num">2</span><span>Laver les haricots noirs, les cuire avec du sel. R&eacute;server.</span></li>
+        <li><span class="step-num">3</span><span>&Eacute;goutter les pommes de terre et les haricots. Les piler ou &eacute;craser encore chauds. Incorporer l&rsquo;huile de palme tout en m&eacute;langeant.</span></li>
+        <li><span class="step-num">4</span><span>Ajouter sel et piment selon votre go&ucirc;t. M&eacute;langer jusqu&rsquo;&agrave; texture homog&egrave;ne. Servir chaud.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Peel, cut and cook the potatoes in salted water until tender.</span></li>
+        <li><span class="step-num">2</span><span>Wash the black beans, cook with salt. Set aside.</span></li>
+        <li><span class="step-num">3</span><span>Drain the potatoes and beans. Pound or mash while still hot. Stir in the palm oil.</span></li>
+        <li><span class="step-num">4</span><span>Season with salt and chilli to taste. Mix until smooth and serve hot.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Pilez les ingr&eacute;dients encore tr&egrave;s chauds pour une texture plus lisse et une meilleure absorption de l&rsquo;huile de palme.</span><span class="en">Pound while still very hot for a smoother texture and better palm oil absorption.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 15. SPAGHETTI ══ -->
+<article class="recipe-block" id="spaghetti">
+  <div class="recipe-header">
+    <div class="recipe-num">15</div>
+    <div class="recipe-title-group">
+      <h2 class="fr">Spaghettis Saut&eacute;s &agrave; la Camerounaise</h2>
+      <h2 class="en">Cameroonian Stir-Fried Spaghetti</h2>
+    </div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image8.jpg" alt="Spaghettis Saut&eacute;s" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 45min</span><span class="meta-badge">&#128101; 4 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Les spaghettis saut&eacute;s &agrave; la camerounaise sont un repas rapide et savoureux, tr&egrave;s populaire dans les familles et chez les &eacute;tudiants. Pr&eacute;par&eacute;s avec des l&eacute;gumes frais et parfois de la viande, ils constituent un plat complet et color&eacute;.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Cameroonian stir-fried spaghetti is a quick and delicious meal, hugely popular with families and students alike. Made with fresh vegetables and optional meat or sausages, it is a colourful, complete one-pan dish.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g spaghettis</span><span class="en">500 g spaghetti</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 poivron vert</span><span class="en">2 carrots, 1 green pepper</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 tomates</span><span class="en">1 onion, 2 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">200 g viande ou saucisses (opt.)</span><span class="en">200 g meat or sausages (opt.)</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. huile, 1 cube, sel, poivre</span><span class="en">3 tbsp oil, 1 stock cube, salt, pepper</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Faire bouillir de l&rsquo;eau sal&eacute;e, cuire les spaghettis selon les indications. &Eacute;goutter et r&eacute;server.</span></li>
+        <li><span class="step-num">2</span><span>Couper les l&eacute;gumes. Faire revenir l&rsquo;oignon dans l&rsquo;huile, ajouter les autres l&eacute;gumes et cuire quelques minutes.</span></li>
+        <li><span class="step-num">3</span><span>Ajouter la viande ou les saucisses. Incorporer les spaghettis cuits, m&eacute;langer soigneusement et assaisonner.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Boil salted water, cook the spaghetti according to packet instructions. Drain and set aside.</span></li>
+        <li><span class="step-num">2</span><span>Chop the vegetables. Saut&eacute; the onion in oil, add the other vegetables and cook a few minutes.</span></li>
+        <li><span class="step-num">3</span><span>Add the meat or sausages. Fold in the cooked spaghetti, mix thoroughly and season.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Ne faites pas trop cuire vos spaghettis &mdash; ils doivent &ecirc;tre al dente pour r&eacute;sister au saut&eacute; et absorber toutes les saveurs.</span><span class="en">Don&rsquo;t overcook your spaghetti &mdash; they should be al dente to hold up to the stir-fry and absorb all the flavours.</span></p></div>
+    </div>
+  </div>
+</article>
+<div class="recipe-sep"></div>
+
+<!-- ══ 16. KONDRÉ ══ -->
+<article class="recipe-block" id="kondre">
+  <div class="recipe-header">
+    <div class="recipe-num">16</div>
+    <div class="recipe-title-group"><h2>Kondr&eacute;</h2><div class="en-title en">Kondr&eacute; &mdash; Unripe Plantain &amp; Meat Stew</div></div>
+  </div>
+  <div class="recipe-divider"></div>
+  <div class="recipe-layout">
+    <div class="recipe-img-col">
+      <img src="images/image15.jpg" alt="Kondr&eacute;" loading="lazy"/>
+      <div class="recipe-meta"><span class="meta-badge">&#9201; 2h</span><span class="meta-badge">&#128101; 6 <span class="fr">pers.</span><span class="en">serv.</span></span></div>
+    </div>
+    <div class="recipe-content-col">
+      <span class="lang-label fr-label fr">Description &middot; FR</span>
+      <div class="desc-box fr">Le kondr&eacute; est un plat traditionnel originaire de l&rsquo;Ouest Cameroun. Pr&eacute;par&eacute; &agrave; base de plantains non m&ucirc;rs et de viande, il est appr&eacute;ci&eacute; pour sa sauce riche et parfum&eacute;e. Tr&egrave;s nourrissant, il est souvent servi lors des repas de famille et des c&eacute;r&eacute;monies.</div>
+      <span class="lang-label en-label en">Description &middot; EN</span>
+      <div class="desc-box en-box en">Kondr&eacute; is a traditional dish from West Cameroon. Made with unripe plantains and meat, it is loved for its rich, aromatic sauce. Very hearty, it is a staple of family meals and traditional ceremonies.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">6 plantains verts</span><span class="en">6 green plantains</span></div>
+        <div class="ingredient-item"><span class="fr">500 g viande de b&oelig;uf ou de ch&egrave;vre</span><span class="en">500 g beef or goat meat</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 3 tomates, 2 gousses d&rsquo;ail</span><span class="en">2 onions, 3 tomatoes, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">1 morceau de gingembre</span><span class="en">1 piece of ginger</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, 1 cube, sel, poivre, eau</span><span class="en">4 tbsp oil, 1 stock cube, salt, pepper, water</span></div>
+      </div>
+      <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
+      <ol class="steps-list fr">
+        <li><span class="step-num">1</span><span>Laver et d&eacute;couper la viande. Assaisonner avec l&rsquo;ail, le gingembre, le sel et le poivre. Cuire jusqu&rsquo;&agrave; ce qu&rsquo;elle soit tendre.</span></li>
+        <li><span class="step-num">2</span><span>&Eacute;plucher les plantains verts, les couper en gros morceaux et bien les laver.</span></li>
+        <li><span class="step-num">3</span><span>Mixer les tomates et les oignons. Faire revenir dans l&rsquo;huile, ajouter le bouillon de viande.</span></li>
+        <li><span class="step-num">4</span><span>Ajouter les morceaux de plantain dans la sauce, incorporer la viande. Cuire &agrave; feu moyen jusqu&rsquo;&agrave; ce que les plantains soient tendres et la sauce &eacute;paisse.</span></li>
+      </ol>
+      <ol class="steps-list en-steps en">
+        <li><span class="step-num">1</span><span>Wash and cut the meat. Season with garlic, ginger, salt and pepper. Cook until tender.</span></li>
+        <li><span class="step-num">2</span><span>Peel the green plantains, cut into large chunks and rinse well.</span></li>
+        <li><span class="step-num">3</span><span>Blend tomatoes and onions. Saut&eacute; in oil, then add the meat broth.</span></li>
+        <li><span class="step-num">4</span><span>Add the plantain chunks to the sauce, fold in the meat. Cook over medium heat until the plantains are tender and the sauce thickens.</span></li>
+      </ol>
+      <div class="tip-box"><span class="tip-icon">&#10024;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">Les plantains verts absorbent les saveurs comme une &eacute;ponge &mdash; plus ils cuisent longtemps &agrave; feu doux, meilleur sera votre kondr&eacute;&nbsp;!</span><span class="en">Green plantains absorb the sauce&rsquo;s flavours like a sponge &mdash; the longer they simmer on low heat, the better your kondr&eacute; will taste!</span></p></div>
+    </div>
+  </div>
+</article>
+
+</div>
+
+<footer>
+  <div class="footer-logo">T&eacute;claire Writes</div>
+  <p class="fr">Merci de voyager avec moi &agrave; travers les saveurs du Cameroun. <span class="heart">&#9829;</span></p>
+  <p class="en">Thank you for journeying with me through the flavours of Cameroon. <span class="heart">&#9829;</span></p>
+  <p style="margin-top:16px;font-size:.8rem;opacity:.5;">&copy; 2026 T&eacute;claire Writes &middot; Un Voyage dans les Repas Camerounais</p>
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.body.dataset.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.toggle('active', btn.textContent.toLowerCase().indexOf(lang) !== -1);
+    });
+  }
+</script>
+</body>
+</html>
