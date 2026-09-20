@@ -43,10 +43,6 @@
     .welcome-section p { font-size: 1.05rem; color: var(--text-light); margin-bottom: 16px; max-width: 680px; margin-left: auto; margin-right: auto; }
     .welcome-section p strong { color: var(--green); }
     .divider { width: 80px; height: 4px; background: linear-gradient(to right, var(--green), var(--gold)); border-radius: 2px; margin: 32px auto; }
-
-    .beginner-guide { max-width: 900px; padding-top: 20px; padding-bottom: 70px; }
-    .beginner-guide p { text-align: left; }
-    .beginner-guide p strong { color: var(--green); }
     .toc-section { padding: 40px 24px 80px; background: var(--green-dark); }
     .toc-section .section-chip { background: var(--gold); color: var(--green-dark); }
     .toc-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.8rem); color: #fff; text-align: center; margin-bottom: 40px; }
@@ -130,7 +126,6 @@
 
 <nav class="site-nav">
   <a href="#welcome">Bienvenue</a>
-  <a href="#guide">Guide débutant</a>
   <a href="#ndole">Ndol&eacute;</a>
   <a href="#eru">Eru</a>
   <a href="#beignets">Beignets</a>
@@ -161,23 +156,6 @@
   <p class="en">Whether you live in Europe, Africa or elsewhere, these recipes were chosen for their simplicity and traditional character. Some call for ingredients easy to find outside Cameroon, so everyone can bring a taste of home to their table.</p>
   <p class="fr">Ce livre est destin&eacute; aussi bien aux d&eacute;butants qu&rsquo;aux passionn&eacute;s de cuisine africaine. Chaque recette est expliqu&eacute;e &eacute;tape par &eacute;tape pour vous permettre de cuisiner avec confiance et plaisir.</p>
   <p class="en">This book is for beginners and African cuisine enthusiasts alike. Every recipe is explained step by step so you can cook with confidence and joy.</p>
-</section>
-
-
-<section class="welcome-section beginner-guide" id="guide">
-  <span class="section-chip fr">Guide du débutant</span>
-  <span class="section-chip en">Beginner's Guide</span>
-  <h2 class="fr">Avant de commencer : quelques gestes simples</h2>
-  <h2 class="en">Before you start: a few simple cooking basics</h2>
-  <div class="divider"></div>
-  <p class="fr">Pas besoin d'être cuisinier pour réussir ces recettes. Lorsque la recette parle de <strong>feu doux</strong>, utilisez une petite flamme : la préparation doit cuire tranquillement sans bouillir fortement. <strong>Feu moyen</strong> signifie une chaleur suffisante pour cuire et faire dorer les aliments sans les brûler. Quand on dit <strong>faire revenir</strong>, cela signifie cuire brièvement dans un peu d'huile en remuant, généralement jusqu'à ce que l'oignon devienne translucide ou que les légumes commencent à dorer.</p>
-  <p class="en">You do not need to be an experienced cook to make these recipes. <strong>Low heat</strong> means a gentle flame: the food should cook quietly rather than boil hard. <strong>Medium heat</strong> is hot enough to cook and brown food without burning it. <strong>Sauté</strong> means cooking ingredients briefly in a little oil while stirring, usually until the onion becomes translucent or the vegetables begin to brown.</p>
-  <p class="fr"><strong>Mijoter</strong> signifie laisser cuire doucement pendant plusieurs minutes, avec seulement de petites bulles à la surface. <strong>Émincer</strong> signifie couper en fines lamelles. <strong>Blanchir</strong> signifie faire bouillir brièvement un aliment puis l'égoutter. Enfin, lorsqu'une recette indique qu'un aliment est <strong>tendre</strong>, le meilleur repère est souvent la fourchette : elle doit pouvoir entrer facilement dans la viande, le plantain ou le légume.</p>
-  <p class="en"><strong>Simmer</strong> means cooking gently for several minutes, with only small bubbles at the surface. <strong>Slice thinly</strong> means cutting into thin strips. <strong>Blanch</strong> means briefly boiling an ingredient and then draining it. Finally, when a recipe says an ingredient should be <strong>tender</strong>, use a fork as your guide: it should enter the meat, plantain or vegetable easily.</p>
-  <div class="tip-box">
-    <span class="tip-icon">👩🏾‍🍳</span>
-    <p><strong class="fr">Le plus important</strong><strong class="en">Most important</strong><span class="fr">Ne vous fiez pas uniquement à l'horloge. Les temps indiqués sont des repères : observez la couleur, la texture et la cuisson de vos aliments. Si vous cuisinez pour la première fois, gardez le feu un peu plus bas et augmentez-le progressivement si nécessaire.</span><span class="en">Do not rely only on the clock. The times are guides: watch the colour, texture and doneness of your food. If you are cooking for the first time, start with slightly lower heat and increase it gradually if needed.</span></p>
-  </div>
 </section>
 
 <section class="toc-section">
@@ -229,9 +207,9 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le ndolé est un ragoût camerounais riche et crémeux, associé à la cuisine sawa. Il combine les feuilles de ndolé, qui ont une légère amertume, avec une sauce aux arachides onctueuse, de la viande, du poisson fumé et des crevettes. Pour un débutant, l’idée importante est de bien réduire l’amertume des feuilles avant de les incorporer, puis de laisser la sauce mijoter doucement afin que les arachides, le poisson et la viande parfument progressivement le plat. À la fin, vous devez obtenir une préparation assez épaisse, crémeuse et parfumée, sans être trop liquide. Le ndolé se mange généralement avec un accompagnement qui permet de profiter de la sauce, comme le plantain, le miondo, le bobolo ou le riz.</div>
+      <div class="desc-box fr">Le ndol&eacute; est l&rsquo;un des plats les plus c&eacute;l&egrave;bres du Cameroun. Originaire du peuple Sawa, pr&eacute;par&eacute; &agrave; base de feuilles de ndol&eacute;, d&rsquo;arachides et de viande ou de poisson, ce plat offre un m&eacute;lange unique de saveurs qui fait la fiert&eacute; de la cuisine camerounaise.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Ndolé is a rich and creamy Cameroonian stew associated with the Sawa cuisine. It combines ndolé leaves, which have a natural bitterness, with a smooth peanut sauce, meat, smoked fish and shrimp. For a beginner, the key is to reduce the bitterness of the leaves before adding them, then let the stew simmer gently so the peanuts, fish and meat gradually flavour the sauce. By the end, the stew should be thick, creamy and fragrant rather than watery. It is usually served with a side that can soak up the sauce, such as plantains, miondo, bobolo or rice.</div>
+      <div class="desc-box en-box en">Ndol&eacute; is one of Cameroon&rsquo;s most celebrated dishes. Originating with the Sawa people, it is made with ndol&eacute; leaves, groundnuts and meat or fish &mdash; a unique blend of flavours that is the pride of Cameroonian cuisine.</div>
       <div class="section-title fr">Ingr&eacute;dients</div>
       <div class="section-title en-title-small en">Ingredients</div>
       <div class="ingredients-grid">
@@ -295,9 +273,23 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">L’eru est un plat traditionnel du Sud-Ouest du Cameroun préparé avec des feuilles d’eru et de waterleaf. Les feuilles cuisent avec la viande et le poisson fumé, puis sont liées par l’huile de palme, ce qui donne un plat souple, riche et très parfumé. Même si la recette paraît simple, le point essentiel pour un débutant est de ne pas ajouter inutilement beaucoup d’eau : les feuilles rendent déjà leur propre jus. Commencez avec une cuisson douce et observez la texture : les feuilles doivent devenir tendres et le mélange doit rester humide et brillant, mais pas noyé dans le liquide. L’eru est traditionnellement servi avec le water fufu, une pâte de manioc souple et légèrement élastique qui se mange avec la sauce.</div>
+      <div class="desc-box fr">Originaire du Sud-Ouest du Cameroun, l&rsquo;eru est un plat traditionnel r&eacute;put&eacute; pour sa richesse en saveurs et sa valeur nutritive. Associ&eacute; au water fufu, il est souvent servi lors des c&eacute;r&eacute;monies familiales et des grandes occasions.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Eru is a traditional dish from Cameroon’s South-West made with eru and waterleaf. The greens are cooked with meat and smoked fish, then enriched with palm oil to create a soft, rich and aromatic dish. For a beginner, the most important point is not to add unnecessary water: the leaves release their own moisture. Start with gentle heat and watch the texture; the greens should become tender and the mixture should remain moist and glossy, but not watery. Eru is traditionally served with water fufu, a soft and slightly elastic cassava dough used to scoop up the sauce.</div>
+      <div class="desc-box en-box en">From the South-West of Cameroon, eru is a traditional dish renowned for its depth of flavour and nutritional value. Paired with water fufu, it graces family ceremonies and grand celebrations.</div>
+      <div class="sub-ing-title fr">Pour l&rsquo;eru</div><div class="sub-ing-title en">For the eru</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g feuilles d&rsquo;eru &eacute;minc&eacute;es</span><span class="en">500 g sliced eru leaves</span></div>
+        <div class="ingredient-item"><span class="fr">1 kg waterleaf</span><span class="en">1 kg waterleaf</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande de b&oelig;uf</span><span class="en">300 g beef</span></div>
+        <div class="ingredient-item"><span class="fr">200 g poisson fum&eacute;</span><span class="en">200 g smoked fish</span></div>
+        <div class="ingredient-item"><span class="fr">200 ml huile de palme</span><span class="en">200 ml palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">2 cubes d&rsquo;assaisonnement, sel</span><span class="en">2 stock cubes, salt</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour le water fufu</div><div class="sub-ing-title en">For the water fufu</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de manioc ferment&eacute;e</span><span class="en">500 g fermented cassava flour</span></div>
+        <div class="ingredient-item"><span class="fr">Eau</span><span class="en">Water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration de l&rsquo;Eru</div>
       <div class="section-title en-title-small en">Eru Method</div>
       <ol class="steps-list fr">
@@ -353,9 +345,21 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Les beignets-haricots sont un grand classique du petit-déjeuner camerounais : des beignets de pâte levée, dorés et moelleux à l’intérieur, servis avec des haricots mijotés. Pour quelqu’un qui débute, la réussite dépend surtout de deux choses : laisser suffisamment de temps à la pâte pour lever et contrôler la température de l’huile. Une pâte bien reposée doit devenir plus gonflée et légère. Lors de la friture, l’huile doit être assez chaude pour faire dorer le beignet progressivement, sans le brûler à l’extérieur alors qu’il reste cru au centre. Les haricots, eux, doivent être très tendres et légèrement crémeux afin de pouvoir être mangés facilement avec les beignets.</div>
+      <div class="desc-box fr">Le beignet haricots est l&rsquo;un des petits-d&eacute;jeuners les plus appr&eacute;ci&eacute;s au Cameroun. Vendu dans les rues, les &eacute;coles et les march&eacute;s, ce repas simple et &eacute;conomique est savoureux et nourrissant.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Bean fritters with beans are a classic Cameroonian breakfast: golden, yeast-raised fritters that are fluffy inside and served with tender stewed beans. For a beginner, success mainly depends on two things: giving the dough enough time to rise and controlling the oil temperature. Properly rested dough should look lighter and more swollen. During frying, the oil should be hot enough to brown the fritters steadily without burning the outside while the centre remains raw. The beans should be very tender and slightly creamy so they are easy to eat with the fritters.</div>
+      <div class="desc-box en-box en">Bean fritters are one of Cameroon&rsquo;s most beloved breakfasts. Sold on streets, at schools and markets, this simple, budget-friendly meal is flavourful and filling.</div>
+      <div class="sub-ing-title fr">Pour les beignets</div><div class="sub-ing-title en">For the fritters</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de bl&eacute;</span><span class="en">500 g wheat flour</span></div>
+        <div class="ingredient-item"><span class="fr">1 sachet levure boulang&egrave;re</span><span class="en">1 packet dry yeast</span></div>
+        <div class="ingredient-item"><span class="fr">50 g sucre, 1 pinc&eacute;e de sel</span><span class="en">50 g sugar, pinch of salt</span></div>
+        <div class="ingredient-item"><span class="fr">Eau ti&egrave;de, huile de friture</span><span class="en">Warm water, frying oil</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour les haricots</div><div class="sub-ing-title en">For the beans</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g haricots rouges ou blancs</span><span class="en">500 g red or white beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 c.&agrave;.s. huile, sel</span><span class="en">1 onion, 2 tbsp oil, salt</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div>
       <div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
@@ -396,9 +400,15 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le Mbongo Tchobi est un plat bassa reconnaissable à sa sauce très sombre, presque noire, et à son parfum d’épices grillées. Ici, la couleur ne signifie pas que le plat est brûlé : elle vient du mélange d’épices Mbongo. Le poisson est cuit directement dans cette sauce composée de tomates, d’oignon, d’ail et d’épices, ce qui lui permet d’absorber les arômes pendant la cuisson. Pour un débutant, il faut surtout éviter de faire bouillir la sauce trop fort : une cuisson moyenne et régulière permet au poisson de rester tendre et à la sauce de s’épaissir doucement. Le résultat recherché est une sauce sombre, parfumée et suffisamment épaisse pour bien enrober le poisson.</div>
+      <div class="desc-box fr">Le Mbongo Tchobi est un plat traditionnel du peuple Bassa. Reconnaissable &agrave; sa couleur noire caract&eacute;ristique, il est pr&eacute;par&eacute; &agrave; partir d&rsquo;un m&eacute;lange d&rsquo;&eacute;pices soigneusement grill&eacute;es. Son go&ucirc;t intense et parfum&eacute; en fait l&rsquo;un des plats les plus embl&eacute;matiques de la gastronomie camerounaise.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Mbongo Tchobi is a Bassa dish known for its very dark, almost black sauce and its aroma of toasted spices. The dark colour does not mean the dish is burnt; it comes from the Mbongo spice mixture. The fish cooks directly in a sauce made from tomatoes, onion, garlic and spices, allowing it to absorb the flavours as it cooks. For a beginner, avoid boiling the sauce too aggressively: steady medium heat keeps the fish tender and lets the sauce thicken gradually. The finished sauce should be dark, aromatic and thick enough to coat the fish.</div>
+      <div class="desc-box en-box en">Mbongo Tchobi is a traditional dish of the Bassa people. Unmistakable by its deep black colour, it is made from a blend of carefully toasted spices. Its intense, aromatic taste makes it one of the most iconic dishes in Cameroonian gastronomy.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 poisson frais (carpe, capitaine ou tilapia)</span><span class="en">1 fresh fish (carp, capitaine or tilapia)</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. &eacute;pices Mbongo Tchobi</span><span class="en">3 tbsp Mbongo Tchobi spice mix</span></div>
+        <div class="ingredient-item"><span class="fr">2 tomates, 1 oignon, 2 gousses d&rsquo;ail</span><span class="en">2 tomatoes, 1 onion, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, sel, poivre, eau</span><span class="en">4 tbsp oil, salt, pepper, water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div>
       <div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
@@ -437,9 +447,15 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le koki est une préparation à base de haricots blancs décortiqués, réduits en pâte puis mélangés avec de l’huile de palme avant d’être cuits à la vapeur. Sa texture finale doit être compacte mais tendre, un peu comme un gâteau salé très moelleux. Pour un débutant, l’étape la plus importante est d’obtenir une pâte suffisamment fine : plus les haricots sont bien écrasés et mélangés, plus le koki sera homogène. La cuisson se fait à la vapeur et demande de la patience ; il ne faut pas plonger les portions dans l’eau. Lorsque le koki est cuit, il doit se tenir lorsqu’on le coupe tout en restant tendre à l’intérieur.</div>
+      <div class="desc-box fr">Le koki est une sp&eacute;cialit&eacute; camerounaise pr&eacute;par&eacute;e &agrave; partir de haricots blancs d&eacute;cortiqu&eacute;s et d&rsquo;huile de palme. Tr&egrave;s nourrissant, il est souvent servi avec des bananes plantains m&ucirc;res ou du manioc.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Koki is made from hulled white beans that are blended into a paste, mixed with palm oil and then steamed. The finished texture should be firm enough to slice but soft and tender inside, rather like a savoury steamed cake. For a beginner, the most important step is getting the bean mixture smooth: the finer and better-mixed the paste, the more even the koki will be. It is steamed rather than boiled, so the portions should sit above the water. When cooked, the koki should hold its shape while remaining moist and tender inside.</div>
+      <div class="desc-box en-box en">Koki is a Cameroonian speciality made from hulled white beans and palm oil, steamed in banana leaves. Hearty and comforting, its mild flavour and soft texture make it a family favourite.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g haricots blancs d&eacute;cortiqu&eacute;s</span><span class="en">500 g hulled white beans</span></div>
+        <div class="ingredient-item"><span class="fr">250 ml huile de palme rouge</span><span class="en">250 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel selon le go&ucirc;t, eau</span><span class="en">Salt to taste, water</span></div>
+        <div class="ingredient-item"><span class="fr">Feuilles de bananier ou moules</span><span class="en">Banana leaves or moulds</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Tremper les haricots plusieurs heures. Retirer les peaux et rincer soigneusement.</span></li>
@@ -479,9 +495,16 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le Poulet DG est un plat festif qui associe trois éléments très faciles à reconnaître : du poulet doré, des plantains mûrs frits et une sauce aux légumes. Le contraste entre le plantain légèrement sucré, le poulet savoureux et les légumes fait toute son originalité. Pour un débutant, préparez chaque élément séparément avant de les réunir : faites d’abord cuire et dorer le poulet, faites frire les plantains jusqu’à ce qu’ils soient bien dorés, puis préparez les légumes. À la fin, mélangez délicatement afin de ne pas écraser les plantains. Le plat doit rester coloré, avec des morceaux visibles de poulet et de plantain et une sauce qui enrobe légèrement l’ensemble.</div>
+      <div class="desc-box fr">Le Poulet DG, qui signifie &laquo;&nbsp;Directeur G&eacute;n&eacute;ral&nbsp;&raquo;, est un plat raffin&eacute; associant du poulet tendre, des plantains m&ucirc;rs frits et des l&eacute;gumes color&eacute;s. Servi aussi bien lors des f&ecirc;tes familiales que dans les restaurants.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Poulet DG is a festive dish built around three easy-to-recognise elements: browned chicken, fried ripe plantains and a vegetable sauce. The contrast between the naturally sweet plantain, savoury chicken and colourful vegetables is what makes the dish distinctive. For a beginner, prepare each component separately before combining them: cook and brown the chicken, fry the plantains until golden, then cook the vegetables. At the end, fold everything together gently so the plantains do not break apart. The finished dish should remain colourful, with visible pieces of chicken and plantain lightly coated in sauce.</div>
+      <div class="desc-box en-box en">Poulet DG, meaning &ldquo;Director General&rdquo;, is a refined dish combining tender chicken, fried ripe plantains and colourful vegetables. It graces both festive family tables and upscale restaurants.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 poulet d&eacute;coup&eacute; en morceaux</span><span class="en">1 chicken, cut into pieces</span></div>
+        <div class="ingredient-item"><span class="fr">4 plantains m&ucirc;rs</span><span class="en">4 ripe plantains</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 poivron vert, 1 poivron rouge</span><span class="en">2 carrots, 1 green &amp; 1 red pepper</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 tomates, 2 gousses d&rsquo;ail</span><span class="en">1 onion, 2 tomatoes, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, sel, poivre, 1 cube</span><span class="en">4 tbsp oil, salt, pepper, 1 stock cube</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Laver et assaisonner le poulet (ail, sel, poivre, oignon). Laisser mariner 30&nbsp;min.</span></li>
@@ -520,9 +543,20 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">La sauce pistache camerounaise est préparée avec des graines de courge moulues — appelées pistache dans ce contexte — qui donnent une sauce épaisse, riche et légèrement granuleuse. Elle peut être préparée avec du bœuf, du poisson fumé et des crevettes, ce qui apporte beaucoup de profondeur au goût. Pour un débutant, le point important est de bien diluer progressivement les graines moulues afin d’éviter les gros grumeaux, puis de cuire la sauce doucement pour qu’elle épaississe sans accrocher au fond de la marmite. La sauce terminée doit être crémeuse et suffisamment épaisse pour napper la cuillère. Elle se déguste ici avec du couscous de manioc, qui apporte une texture souple et neutre idéale pour absorber la sauce.</div>
+      <div class="desc-box fr">La sauce pistache, pr&eacute;par&eacute;e &agrave; partir de graines de courge moul&ucirc;es, offre une texture riche et un go&ucirc;t d&eacute;licat. Accompagn&eacute;e de couscous de manioc, elle constitue un repas nourrissant et convivial.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Cameroonian pistache sauce is made from ground pumpkin seeds, called pistache in this culinary context, which create a thick, rich sauce with a slightly grainy texture. It can be prepared with beef, smoked fish and shrimp for extra depth of flavour. For a beginner, gradually loosen the ground seeds with liquid to avoid large lumps, then cook the sauce gently so it thickens without sticking. The finished sauce should be creamy and thick enough to coat a spoon. Here it is served with cassava couscous, whose mild flavour and soft texture are ideal for absorbing the sauce.</div>
+      <div class="desc-box en-box en">Pumpkin seed sauce, made from ground squash seeds, has a rich texture and a delicate taste. Served with cassava couscous, it makes a hearty, convivial meal.</div>
+      <div class="sub-ing-title fr">Pour la sauce pistache</div><div class="sub-ing-title en">For the sauce</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g graines de courge moul&ucirc;es</span><span class="en">500 g ground pumpkin seeds</span></div>
+        <div class="ingredient-item"><span class="fr">300 g b&oelig;uf ou poisson fum&eacute;</span><span class="en">300 g beef or smoked fish</span></div>
+        <div class="ingredient-item"><span class="fr">200 g crevettes fra&icirc;ches ou s&eacute;ch&eacute;es</span><span class="en">200 g fresh or dried shrimp</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 gousses d&rsquo;ail, 1 piment (opt.), sel, eau</span><span class="en">1 onion, 2 garlic cloves, 1 chilli (opt.), salt, water</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour le couscous</div><div class="sub-ing-title en">For the couscous</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de manioc, eau</span><span class="en">500 g cassava flour, water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>M&eacute;langer la pistache moul&ucirc;e avec un peu d&rsquo;eau&nbsp;; ajouter l&rsquo;oignon et l&rsquo;ail &eacute;cras&eacute;s, puis la viande ou le poisson.</span></li>
@@ -554,9 +588,17 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">L’Okok est un plat traditionnel des peuples Bëti du Centre et du Sud du Cameroun. Il est préparé avec des feuilles d’okok finement écrasées et une base d’arachide, ce qui donne une sauce dense, verte et très parfumée. Pour quelqu’un qui découvre ce plat, il faut retenir que les feuilles constituent la base de la sauce : elles doivent être suffisamment fines pour se mélanger facilement aux arachides et aux autres ingrédients. La cuisson se fait progressivement afin que les feuilles deviennent tendres et que la sauce perde son goût végétal trop prononcé. À la fin, vous recherchez une sauce épaisse et homogène, dans laquelle l’huile et les arachides sont bien incorporées.</div>
+      <div class="desc-box fr">L&rsquo;Okok est un plat traditionnel des peuples B&euml;ti du Centre et du Sud du Cameroun. Pr&eacute;par&eacute; &agrave; base de feuilles d&rsquo;okok finement &eacute;cras&eacute;es et de p&acirc;te d&rsquo;arachide, ce mets est appr&eacute;ci&eacute; pour son go&ucirc;t riche et sa valeur nutritive.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Okok is a traditional dish of the Bëti peoples of central and southern Cameroon. It is made from finely crushed okok leaves combined with a peanut-based sauce, creating a dense, green and highly aromatic dish. For a beginner, remember that the leaves form the main body of the sauce: they need to be fine enough to combine easily with the peanuts and other ingredients. Cook the mixture gradually so the leaves become tender and their raw vegetal flavour softens. The finished dish should be thick and homogeneous, with the oil and peanut mixture well incorporated.</div>
+      <div class="desc-box en-box en">Okok is a traditional dish of the B&euml;ti peoples of Central and Southern Cameroon. Made from finely pounded okok leaves and peanut paste, it is prized for its rich flavour and nutritional value.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g feuilles d&rsquo;okok finement hach&eacute;es</span><span class="en">500 g finely chopped okok leaves</span></div>
+        <div class="ingredient-item"><span class="fr">300 g p&acirc;te d&rsquo;arachide</span><span class="en">300 g peanut paste</span></div>
+        <div class="ingredient-item"><span class="fr">200 g poisson fum&eacute; ou viande</span><span class="en">200 g smoked fish or meat</span></div>
+        <div class="ingredient-item"><span class="fr">150 g crevettes s&eacute;ch&eacute;es ou fra&icirc;ches</span><span class="en">150 g dried or fresh shrimp</span></div>
+        <div class="ingredient-item"><span class="fr">200 ml huile de palme</span><span class="en">200 ml palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel, cube, eau</span><span class="en">Salt, stock cube, water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Laver les feuilles d&rsquo;okok. Les m&eacute;langer avec l&rsquo;huile dans une marmite jusqu&rsquo;&agrave; m&eacute;lange homog&egrave;ne.</span></li>
@@ -597,9 +639,15 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le couscous de maïs est une préparation à base de farine de maïs cuite à la vapeur ou travaillée avec de l’eau chaude jusqu’à obtenir une pâte ferme et souple. Contrairement à un riz ou à des pâtes, il ne faut pas simplement le faire bouillir dans beaucoup d’eau : la quantité d’eau et le travail de la pâte sont essentiels pour obtenir la bonne texture. Pour un débutant, ajoutez l’eau progressivement et mélangez bien pour éviter les grumeaux. Le couscous doit finalement pouvoir être façonné ou découpé en portions sans être liquide ni friable. Il sert surtout de base neutre pour accompagner une sauce aux légumes, à la viande ou au poisson.</div>
+      <div class="desc-box fr">Le couscous de ma&iuml;s est tr&egrave;s appr&eacute;ci&eacute; dans les r&eacute;gions septentrionales du Cameroun. L&eacute;ger, nourrissant et facile &agrave; pr&eacute;parer, il accompagne parfaitement les sauces aux l&eacute;gumes, &agrave; la viande ou au poisson.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Corn couscous is made from corn flour and cooked or steamed until it becomes a firm but soft dough. Unlike rice or pasta, it should not simply be boiled in a large amount of water: the amount of water and the mixing process determine the final texture. For a beginner, add the water gradually and mix well to prevent lumps. The finished couscous should be firm enough to shape or cut into portions without being wet or crumbly. It works mainly as a neutral base for vegetable, meat or fish sauces.</div>
+      <div class="desc-box en-box en">Corn couscous is a staple of Northern Cameroon. Light, nourishing and easy to prepare, it pairs perfectly with vegetable, meat or fish sauces.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g farine de ma&iuml;s, eau, sel</span><span class="en">500 g corn flour, water, salt</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 chou moyen</span><span class="en">2 carrots, 1 medium cabbage</span></div>
+        <div class="ingredient-item"><span class="fr">1 poivron vert, 2 tomates, 1 oignon</span><span class="en">1 green pepper, 2 tomatoes, 1 onion</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande ou poisson, 3 c.&agrave;.s. huile, sel, poivre</span><span class="en">300 g meat or fish, 3 tbsp oil, salt, pepper</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Humidifier l&eacute;g&egrave;rement la farine de ma&iuml;s&nbsp;; la travailler avec les mains pour former de petits grains. Cuire &agrave; la vapeur ~30&nbsp;min.</span></li>
@@ -634,9 +682,15 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le plantain mûr et les haricots rouges forment un repas simple, généreux et très populaire. Le plantain apporte une douceur naturelle lorsqu’il est bien mûr, tandis que les haricots apportent une texture crémeuse et un goût plus terreux. Pour réussir le plat, choisissez des plantains dont la peau est bien jaune avec des taches noires : ils seront plus doux et plus faciles à frire. Faites cuire les haricots jusqu’à ce qu’ils soient vraiment tendres avant de les assaisonner. Les rondelles de plantain doivent être dorées à l’extérieur et moelleuses à l’intérieur. Servez les deux éléments ensemble afin que le contraste sucré-salé soit bien présent.</div>
+      <div class="desc-box fr">Le plantain m&ucirc;r et les haricots rouges forment une association incontournable de la cuisine camerounaise. Repas &eacute;quilibr&eacute;, appr&eacute;ci&eacute; pour son go&ucirc;t l&eacute;g&egrave;rement sucr&eacute; et sa richesse en prot&eacute;ines v&eacute;g&eacute;tales.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Ripe plantains and red beans make a simple, generous and very popular meal. The plantain provides natural sweetness when fully ripe, while the beans add a creamy texture and a deeper savoury flavour. For best results, choose plantains with yellow skin and plenty of dark spots; they will be sweeter and softer. Cook the beans until genuinely tender before seasoning them. The plantain slices should be golden outside and soft inside. Serve both together so the sweet-and-savoury contrast is clear.</div>
+      <div class="desc-box en-box en">Fried ripe plantain and red beans are an iconic pairing in Cameroonian cuisine. This balanced meal is loved for its slightly sweet taste and high plant-protein content.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">4 plantains m&ucirc;rs</span><span class="en">4 ripe plantains</span></div>
+        <div class="ingredient-item"><span class="fr">500 g haricots rouges</span><span class="en">500 g red beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 gros oignon, 2 tomates</span><span class="en">1 large onion, 2 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. huile, 1 cube (opt.), sel, eau</span><span class="en">3 tbsp oil, 1 stock cube (opt.), salt, water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Trier, laver et tremper les haricots. Les cuire dans l&rsquo;eau jusqu&rsquo;&agrave; ce qu&rsquo;ils soient tendres.</span></li>
@@ -671,9 +725,15 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le poisson braisé à la camerounaise est un poisson entier ou en morceaux, assaisonné avec une marinade aromatique puis grillé jusqu’à obtenir une peau bien dorée et légèrement fumée. Pour un débutant, il est important de bien entailler le poisson : les petites incisions permettent à la marinade de pénétrer davantage dans la chair. Avant de le griller, laissez-le reposer quelques minutes avec l’assaisonnement. Pendant la cuisson, retournez-le avec précaution pour éviter qu’il ne se casse. Le poisson est prêt lorsque la chair devient opaque et se détache facilement de l’arête. Le résultat doit être parfumé, légèrement croustillant à l’extérieur et tendre à l’intérieur.</div>
+      <div class="desc-box fr">Le poisson brais&eacute; est l&rsquo;un des plats les plus populaires du Cameroun. Pr&eacute;par&eacute; avec des &eacute;pices parfum&eacute;es et grill&eacute; &agrave; la perfection, son go&ucirc;t fum&eacute; et relev&eacute; en fait un incontournable des maquis camerounais.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Cameroonian grilled fish is usually a whole fish or fish pieces coated in an aromatic marinade and grilled until the skin is browned and lightly smoky. For a beginner, scoring the fish is important because the cuts allow the marinade to reach deeper into the flesh. Let the seasoned fish rest for a short time before grilling. Turn it carefully during cooking so it does not break. The fish is ready when the flesh becomes opaque and flakes away easily from the bones. The ideal result is fragrant and slightly crisp outside while remaining moist inside.</div>
+      <div class="desc-box en-box en">Grilled fish is one of the most popular dishes in Cameroon. Marinated in fragrant spices and grilled to perfection, its smoky, spicy taste makes it a must-have at Cameroonian restaurants.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">2 poissons entiers (tilapia, capitaine ou maquereau)</span><span class="en">2 whole fish (tilapia, capitaine or mackerel)</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 3 tomates</span><span class="en">2 onions, 3 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">2 gousses d&rsquo;ail, 1 morceau de gingembre</span><span class="en">2 garlic cloves, 1 piece ginger</span></div>
+        <div class="ingredient-item"><span class="fr">1 piment (opt.), 4 c.&agrave;.s. huile, sel, poivre</span><span class="en">1 chilli (opt.), 4 tbsp oil, salt, pepper</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Nettoyer les poissons, faire des entailles sur les c&ocirc;t&eacute;s et saler l&eacute;g&egrave;rement.</span></li>
@@ -711,9 +771,17 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le Jollof Rice est un riz cuit directement dans une sauce tomate assaisonnée, ce qui permet aux grains d’absorber les épices et le goût des légumes pendant toute la cuisson. La difficulté pour un débutant est surtout de trouver le bon équilibre entre liquide et riz : trop d’eau donne un riz pâteux, tandis que trop peu d’eau peut empêcher les grains de cuire. Après avoir préparé la sauce tomate, ajoutez le riz, mélangez, couvrez et laissez cuire doucement. Évitez de remuer constamment pendant la cuisson. Le riz terminé doit être tendre mais encore bien séparé, avec une belle couleur rouge-orangée et un goût de tomate et d’épices.</div>
+      <div class="desc-box fr">Le Jollof Rice est un riz parfum&eacute; cuit dans une sauce tomate &eacute;pic&eacute;e. Tr&egrave;s populaire en Afrique de l&rsquo;Ouest et au Cameroun, il est incontournable lors des f&ecirc;tes et repas de famille.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Jollof Rice is rice cooked directly in a seasoned tomato sauce, allowing the grains to absorb the flavour of the tomatoes, vegetables and spices throughout the cooking process. For a beginner, the main challenge is balancing the liquid and rice: too much liquid makes the rice mushy, while too little prevents the grains from cooking. Once the tomato sauce is ready, add the rice, mix, cover and cook gently. Avoid stirring constantly. The finished rice should be tender but still separate, with a red-orange colour and a clear tomato-and-spice flavour.</div>
+      <div class="desc-box en-box en">Jollof Rice is fragrant rice cooked in a spiced tomato sauce. Wildly popular across West Africa and Cameroon, it is a staple of celebrations, birthdays and family gatherings.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g riz long grain</span><span class="en">500 g long-grain rice</span></div>
+        <div class="ingredient-item"><span class="fr">1 poulet d&eacute;coup&eacute;</span><span class="en">1 chicken, cut into pieces</span></div>
+        <div class="ingredient-item"><span class="fr">4 tomates fra&icirc;ches, 1 bo&icirc;te concentr&eacute;</span><span class="en">4 fresh tomatoes, 1 can tomato paste</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 1 poivron rouge</span><span class="en">2 onions, 1 red pepper</span></div>
+        <div class="ingredient-item"><span class="fr">2 gousses d&rsquo;ail, 1 morceau de gingembre</span><span class="en">2 garlic cloves, 1 piece ginger</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, 1 cube, sel, poivre, 1&nbsp;L bouillon</span><span class="en">4 tbsp oil, 1 stock cube, salt, pepper, 1&nbsp;L stock</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Assaisonner le poulet (sel, ail, gingembre, poivre). Le faire cuire puis r&eacute;server.</span></li>
@@ -755,9 +823,20 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le taro à la sauce jaune est un plat emblématique de l’Ouest et du Nord-Ouest du Cameroun. Le taro est cuit puis pilé pour former une pâte lisse et dense, tandis que la sauce jaune est préparée avec de l’huile de palme et une solution de pierre de potasse qui donne sa couleur jaune-orangée caractéristique. Pour un débutant, la préparation de la sauce demande surtout de la patience : la solution de potasse doit être ajoutée progressivement tout en remuant afin d’obtenir une texture homogène. Le taro, lui, doit être suffisamment cuit pour pouvoir être pilé sans morceaux durs. On obtient finalement une pâte ferme et lisse servie avec une sauce crémeuse et parfumée.</div>
+      <div class="desc-box fr">Le taro &agrave; la sauce jaune est l&rsquo;un des plats les plus embl&eacute;matiques de l&rsquo;Ouest et du Nord-Ouest du Cameroun. Tr&egrave;s pr&eacute;sent lors des mariages, fun&eacute;railles et c&eacute;r&eacute;monies traditionnelles, il est appr&eacute;ci&eacute; pour sa sauce onctueuse &agrave; base d&rsquo;huile de palme et de pierre de potasse.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Taro with yellow sauce is an iconic dish from western and north-western Cameroon. The taro is boiled and pounded into a smooth, dense dough, while the yellow sauce is made with palm oil and a potash solution that creates its characteristic yellow-orange colour. For a beginner, the sauce requires patience: add the potash solution gradually while stirring so the mixture becomes smooth and creamy. The taro must be fully cooked before pounding so there are no hard pieces. The final dish combines a firm, smooth taro dough with a creamy, aromatic sauce.</div>
+      <div class="desc-box en-box en">Taro with yellow sauce is one of the most iconic dishes of West and North-West Cameroon. A centrepiece at weddings, funerals and traditional ceremonies, it is celebrated for its creamy sauce made from palm oil and potash.</div>
+      <div class="sub-ing-title fr">Pour le taro</div><div class="sub-ing-title en">For the taro</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">2 kg de taro, eau, sel</span><span class="en">2 kg taro, water, salt</span></div>
+      </div>
+      <div class="sub-ing-title fr">Pour la sauce jaune</div><div class="sub-ing-title en">For the yellow sauce</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 ml huile de palme rouge</span><span class="en">500 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">300 g viande de b&oelig;uf</span><span class="en">300 g beef</span></div>
+        <div class="ingredient-item"><span class="fr">200 g peau de b&oelig;uf kanda (opt.)</span><span class="en">200 g beef skin kanda (opt.)</span></div>
+        <div class="ingredient-item"><span class="fr">1 morceau pierre de potasse (kanwa), sel</span><span class="en">1 piece potash stone (kanwa), salt</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Laver les tubercules. Les cuire avec leur peau dans l&rsquo;eau sal&eacute;e. Une fois cuits, &eacute;plucher et piler.</span></li>
@@ -795,9 +874,16 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le pilé de pommes de terre est un plat traditionnel de l’Ouest Cameroun qui associe des pommes de terre écrasées, des haricots noirs ou rouges et de l’huile de palme. C’est une recette rustique et réconfortante, mais elle demande de bien gérer la texture : les pommes de terre doivent être suffisamment cuites pour être facilement écrasées, tandis que les haricots doivent rester tendres sans se transformer complètement en purée. Pour un débutant, faites cuire chaque élément séparément si nécessaire, puis écrasez les pommes de terre avant de les mélanger progressivement aux haricots et à l’huile. Le résultat recherché est une préparation compacte, moelleuse et bien liée.</div>
+      <div class="desc-box fr">Le pil&eacute; de pommes de terre est un plat traditionnel de l&rsquo;Ouest Cameroun. Tr&egrave;s appr&eacute;ci&eacute; pour sa simplicit&eacute; et son go&ucirc;t authentique, il associe des pommes de terre tendres &agrave; de l&rsquo;haricot noir et &agrave; l&rsquo;huile de palme.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Pounded potato is a traditional dish from western Cameroon combining mashed potatoes, black or red beans and palm oil. It is rustic and comforting, but the texture matters: the potatoes should be soft enough to mash easily, while the beans should remain tender without completely turning into purée. For a beginner, cook each component separately if necessary, then mash the potatoes before gradually combining them with the beans and palm oil. The finished mixture should be compact, soft and well bound.</div>
+      <div class="desc-box en-box en">Pounded potato is a traditional dish from West Cameroon. Loved for its simplicity and authentic taste, it combines tender potatoes with black beans and palm oil &mdash; a hearty family meal.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">1 kg pommes de terre</span><span class="en">1 kg potatoes</span></div>
+        <div class="ingredient-item"><span class="fr">300 g haricots noirs</span><span class="en">300 g black beans</span></div>
+        <div class="ingredient-item"><span class="fr">1 gros oignon</span><span class="en">1 large onion</span></div>
+        <div class="ingredient-item"><span class="fr">150 ml huile de palme rouge</span><span class="en">150 ml red palm oil</span></div>
+        <div class="ingredient-item"><span class="fr">Sel, 1 piment (opt.)</span><span class="en">Salt, 1 chilli (opt.)</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>&Eacute;plucher, couper et cuire les pommes de terre dans l&rsquo;eau sal&eacute;e jusqu&rsquo;&agrave; ce qu&rsquo;elles soient tendres.</span></li>
@@ -834,9 +920,16 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Les spaghettis sautés à la camerounaise sont une version simple et adaptable d’un plat de pâtes préparé à la poêle avec des légumes et, selon les goûts, de la viande ou des saucisses. Ils sont particulièrement pratiques lorsqu’on veut cuisiner rapidement avec des ingrédients courants. Pour un débutant, le secret est de ne pas trop cuire les pâtes avant de les faire sauter : elles doivent rester légèrement fermes pour supporter la deuxième cuisson dans la poêle. Faites revenir les légumes jusqu’à ce qu’ils soient tendres mais encore un peu croquants, ajoutez ensuite la viande, puis les spaghettis. Mélangez suffisamment pour répartir l’assaisonnement sans écraser les ingrédients.</div>
+      <div class="desc-box fr">Les spaghettis saut&eacute;s &agrave; la camerounaise sont un repas rapide et savoureux, tr&egrave;s populaire dans les familles et chez les &eacute;tudiants. Pr&eacute;par&eacute;s avec des l&eacute;gumes frais et parfois de la viande, ils constituent un plat complet et color&eacute;.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Cameroonian stir-fried spaghetti is a simple and adaptable pasta dish cooked in a pan with vegetables and, depending on preference, meat or sausages. It is especially convenient when you want a quick meal using familiar ingredients. For a beginner, the key is not to overcook the pasta before stir-frying it: it should remain slightly firm so it can handle the second cooking stage. Sauté the vegetables until tender but still a little crisp, add the meat, then the spaghetti. Mix thoroughly enough to distribute the seasoning without crushing the ingredients.</div>
+      <div class="desc-box en-box en">Cameroonian stir-fried spaghetti is a quick and delicious meal, hugely popular with families and students alike. Made with fresh vegetables and optional meat or sausages, it is a colourful, complete one-pan dish.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">500 g spaghettis</span><span class="en">500 g spaghetti</span></div>
+        <div class="ingredient-item"><span class="fr">2 carottes, 1 poivron vert</span><span class="en">2 carrots, 1 green pepper</span></div>
+        <div class="ingredient-item"><span class="fr">1 oignon, 2 tomates</span><span class="en">1 onion, 2 tomatoes</span></div>
+        <div class="ingredient-item"><span class="fr">200 g viande ou saucisses (opt.)</span><span class="en">200 g meat or sausages (opt.)</span></div>
+        <div class="ingredient-item"><span class="fr">3 c.&agrave;.s. huile, 1 cube, sel, poivre</span><span class="en">3 tbsp oil, 1 stock cube, salt, pepper</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Faire bouillir de l&rsquo;eau sal&eacute;e, cuire les spaghettis selon les indications. &Eacute;goutter et r&eacute;server.</span></li>
@@ -868,9 +961,16 @@
     </div>
     <div class="recipe-content-col">
       <span class="lang-label fr-label fr">Description &middot; FR</span>
-      <div class="desc-box fr">Le kondré est un ragoût traditionnel de l’Ouest Cameroun préparé avec des plantains verts et de la viande dans une sauce tomate parfumée. Les plantains verts sont beaucoup moins sucrés que les plantains mûrs et ont une texture ferme qui devient fondante après une cuisson prolongée. Pour un débutant, prenez le temps de bien cuire la viande avant ou pendant la préparation de la sauce, puis laissez les morceaux de plantain mijoter doucement dans cette sauce. Le plat est prêt lorsque les plantains peuvent être facilement traversés par une fourchette et que la sauce a épaissi. Une cuisson lente permet aux plantains d’absorber les épices et le jus de viande.</div>
+      <div class="desc-box fr">Le kondr&eacute; est un plat traditionnel originaire de l&rsquo;Ouest Cameroun. Pr&eacute;par&eacute; &agrave; base de plantains non m&ucirc;rs et de viande, il est appr&eacute;ci&eacute; pour sa sauce riche et parfum&eacute;e. Tr&egrave;s nourrissant, il est souvent servi lors des repas de famille et des c&eacute;r&eacute;monies.</div>
       <span class="lang-label en-label en">Description &middot; EN</span>
-      <div class="desc-box en-box en">Kondré is a traditional stew from western Cameroon made with green plantains and meat in a fragrant tomato-based sauce. Green plantains are much less sweet than ripe ones and have a firm texture that becomes tender after longer cooking. For a beginner, take time to cook the meat properly, then let the plantain pieces simmer gently in the sauce. The dish is ready when the plantains can be pierced easily with a fork and the sauce has thickened. Slow cooking allows the plantains to absorb the spices and the meat juices.</div>
+      <div class="desc-box en-box en">Kondr&eacute; is a traditional dish from West Cameroon. Made with unripe plantains and meat, it is loved for its rich, aromatic sauce. Very hearty, it is a staple of family meals and traditional ceremonies.</div>
+      <div class="ingredients-grid">
+        <div class="ingredient-item"><span class="fr">6 plantains verts</span><span class="en">6 green plantains</span></div>
+        <div class="ingredient-item"><span class="fr">500 g viande de b&oelig;uf ou de ch&egrave;vre</span><span class="en">500 g beef or goat meat</span></div>
+        <div class="ingredient-item"><span class="fr">2 oignons, 3 tomates, 2 gousses d&rsquo;ail</span><span class="en">2 onions, 3 tomatoes, 2 garlic cloves</span></div>
+        <div class="ingredient-item"><span class="fr">1 morceau de gingembre</span><span class="en">1 piece of ginger</span></div>
+        <div class="ingredient-item"><span class="fr">4 c.&agrave;.s. huile, 1 cube, sel, poivre, eau</span><span class="en">4 tbsp oil, 1 stock cube, salt, pepper, water</span></div>
+      </div>
       <div class="section-title fr">Pr&eacute;paration</div><div class="section-title en-title-small en">Method</div>
       <ol class="steps-list fr">
         <li><span class="step-num">1</span><span>Laver et d&eacute;couper la viande. Assaisonner avec l&rsquo;ail, le gingembre, le sel et le poivre. Cuire jusqu&rsquo;&agrave; ce qu&rsquo;elle soit tendre.</span></li>
