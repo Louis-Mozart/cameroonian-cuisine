@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://louis-mozart.github.io/cameroonian-cuisine/sitemap.xml
