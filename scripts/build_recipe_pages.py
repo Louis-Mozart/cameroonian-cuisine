@@ -3,7 +3,7 @@
 Extracts each <article class="recipe-block"> from index.html and generates
 a standalone, SEO-optimized page per recipe under /recettes/<id>.html,
 complete with Recipe (schema.org) JSON-LD structured data, bilingual FR/EN
-toggle, shared styling, and links back to the main site + the cookbook upsell.
+toggle, shared styling, and links back to the main site + the community email signup.
 """
 import re
 import os
@@ -124,9 +124,9 @@ for rid, block in articles:
 .breadcrumb span {{ color:var(--text-light); margin:0 6px; }}
 .recipe-page-header {{ max-width:960px;margin:0 auto;padding:20px 24px 0; }}
 .back-cta {{ display:block; text-align:center; margin:40px auto; }}
-.upsell-strip {{ max-width:960px;margin:60px auto 0;padding:24px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:16px;color:#fff;text-align:center; }}
-.upsell-strip h3 {{ font-family:'Playfair Display',serif; margin-bottom:10px; color:var(--gold); }}
-.upsell-strip a.cta {{ display:inline-block;margin-top:12px;background:var(--gold);color:var(--green-dark);padding:10px 22px;border-radius:24px;text-decoration:none;font-weight:800; }}
+.community-strip {{ max-width:960px;margin:60px auto 0;padding:24px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:16px;color:#fff;text-align:center; }}
+.community-strip h3 {{ font-family:'Playfair Display',serif; margin-bottom:10px; color:var(--gold); }}
+.community-strip a.cta {{ display:inline-block;margin-top:12px;background:var(--gold);color:var(--green-dark);padding:10px 22px;border-radius:24px;text-decoration:none;font-weight:800; }}
 </style>
 </head>
 <body data-lang="fr">
@@ -134,6 +134,9 @@ for rid, block in articles:
   <button class="lang-btn active" onclick="setLang('fr')">&#127467;&#127479; FR</button>
   <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
 </div>
+
+<a class="notify-fab" href="../index.html#free-recipes" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
+<div class="notify-tooltip"><span class="fr">Int&eacute;ress&eacute;(e) par plus de recettes&nbsp;?</span><span class="en">Interested in more recipes?</span></div>
 
 <nav class="site-nav">
   <a href="../index.html">{'← Toutes les recettes'}</a>
@@ -146,12 +149,13 @@ for rid, block in articles:
 
 <div class="recipes-wrapper">
 <article class="recipe-block" id="{rid}">{block}</article>
+
 </div>
 
-<div class="upsell-strip">
-  <h3><span class="fr">Envie des 16 recettes en un seul livre&nbsp;?</span><span class="en">Want all 16 recipes in one book?</span></h3>
-  <p><span class="fr">Le livre num&eacute;rique inclut plus de recettes, un guide du d&eacute;butant et des listes de courses.</span><span class="en">The digital cookbook includes more recipes, a beginner's guide and shopping lists.</span></p>
-  <a class="cta" href="../index.html#cookbook"><span class="fr">Voir le livre num&eacute;rique →</span><span class="en">See the digital cookbook →</span></a>
+<div class="community-strip">
+  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;?</span><span class="en">Want more Cameroonian recipes?</span></h3>
+  <p><span class="fr">Laissez votre email pour &ecirc;tre pr&eacute;venu(e) d&egrave;s qu'une nouvelle recette est publi&eacute;e.</span><span class="en">Leave your email to be notified as soon as a new recipe is published.</span></p>
+  <a class="cta" href="../index.html#free-recipes"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
 </div>
 
 <a class="back-cta" href="../index.html"><span class="fr">&larr; Retour &agrave; toutes les recettes</span><span class="en">&larr; Back to all recipes</span></a>
