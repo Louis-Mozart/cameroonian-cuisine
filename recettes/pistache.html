@@ -70,11 +70,21 @@
     .notify-tooltip { position: fixed; bottom: 90px; right: 24px; z-index: 1000; background: var(--green-dark); color: #fff; padding: 10px 16px; border-radius: 12px; font-size: .82rem; max-width: 200px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; transform: translateY(6px); }
     .notify-fab:hover + .notify-tooltip, .notify-tooltip.show { opacity: 1; transform: translateY(0); }
     @media(max-width:640px){ .notify-fab { width: 50px; height: 50px; font-size: 1.3rem; bottom: 16px; right: 16px; } .notify-tooltip { bottom: 74px; right: 16px; } }
+    .notify-popup { position: fixed; bottom: 92px; right: 24px; z-index: 1001; width: min(320px, calc(100vw - 48px)); background: #fff; border-radius: 16px; padding: 24px 22px; box-shadow: 0 14px 40px rgba(0,0,0,.25); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .25s, transform .25s; }
+    .notify-popup.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+    .notify-popup h4 { font-family: 'Playfair Display', serif; color: var(--green); font-size: 1.1rem; margin-bottom: 8px; }
+    .notify-popup p { font-size: .85rem; color: var(--text-light); margin-bottom: 14px; }
+    .notify-popup .email-form { flex-direction: column; }
+    .notify-popup .email-form input[type="email"] { width: 100%; }
+    .notify-popup .email-form button { width: 100%; }
+    .notify-popup-close { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.1rem; color: #999; cursor: pointer; }
+    @media(max-width:640px){ .notify-popup { bottom: 76px; right: 16px; } }
     .hero { min-height: 100vh; background: linear-gradient(160deg, rgba(26,58,7,.82) 0%, rgba(224,123,0,.65) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px 80px; position: relative; overflow: hidden; }
     .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--cream)); }
     .hero-flag { display: flex; gap: 0; border-radius: 6px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
-    .hero-flag span { width: 28px; height: 60px; display: block; }
+    .hero-flag span { width: 28px; height: 60px; display: block; position: relative; }
     .f1 { background: #007a5e; } .f2 { background: #ce1126; } .f3 { background: #fcd116; }
+    .f2::after { content: '\2605'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); color: #fcd116; font-size: .9rem; line-height: 1; }
     .hero-eyebrow { font-family: 'Lato', sans-serif; font-size: .85rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
     .hero h1 { font-family: 'Playfair Display', serif; font-weight: 900; font-size: clamp(2.4rem, 6vw, 5rem); line-height: 1.12; color: #fff; text-shadow: 0 2px 16px rgba(0,0,0,.4); margin-bottom: 14px; }
     .hero h1 span { color: var(--gold); }
@@ -184,8 +194,22 @@
   <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
 </div>
 
-<a class="notify-fab" href="../index.html#free-recipes" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
+<a class="notify-fab" href="#" onclick="toggleNotifyPopup(); return false;" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
 <div class="notify-tooltip"><span class="fr">Int&eacute;ress&eacute;(e) par plus de recettes&nbsp;?</span><span class="en">Interested in more recipes?</span></div>
+
+<div class="notify-popup" id="notify-popup">
+  <button class="notify-popup-close" onclick="toggleNotifyPopup()" aria-label="Fermer / Close">&times;</button>
+  <h4><span class="fr">Plus de recettes&nbsp;? &#127464;&#127474;</span><span class="en">More recipes? &#127464;&#127474;</span></h4>
+  <p><span class="fr">Laissez votre email, je vous pr&eacute;viens d&egrave;s qu'une nouvelle recette sort.</span><span class="en">Leave your email and I'll let you know as soon as a new recipe is out.</span></p>
+  <form class="email-form" action="https://formsubmit.co/louismozart17@gmail.com" method="post">
+    <input type="hidden" name="_subject" value="Nouvel abonné (popup recette) — Un Voyage dans les Repas Camerounais">
+    <input type="hidden" name="_cc" value="graceteclaire26@gmail.com">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://louis-mozart.github.io/cameroonian-cuisine/merci.html">
+    <input type="email" name="email" required placeholder="Votre email / Your email">
+    <button class="cta cta-primary" type="submit"><span class="fr">Me pr&eacute;venir</span><span class="en">Notify me</span></button>
+  </form>
+</div>
 
 <nav class="site-nav">
   <a href="../index.html">← Toutes les recettes</a>
@@ -250,9 +274,9 @@
 </div>
 
 <div class="community-strip">
-  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;?</span><span class="en">Want more Cameroonian recipes?</span></h3>
+  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;? &#127464;&#127474;</span><span class="en">Want more Cameroonian recipes? &#127464;&#127474;</span></h3>
   <p><span class="fr">Laissez votre email pour &ecirc;tre pr&eacute;venu(e) d&egrave;s qu'une nouvelle recette est publi&eacute;e.</span><span class="en">Leave your email to be notified as soon as a new recipe is published.</span></p>
-  <a class="cta" href="../index.html#free-recipes"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
+  <a class="cta" href="#" onclick="toggleNotifyPopup(); return false;"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
 </div>
 
 <a class="back-cta" href="../index.html"><span class="fr">&larr; Retour &agrave; toutes les recettes</span><span class="en">&larr; Back to all recipes</span></a>
@@ -270,6 +294,10 @@
     document.querySelectorAll('.lang-btn').forEach(function(btn) {
       btn.classList.toggle('active', btn.textContent.toLowerCase().indexOf(lang) !== -1);
     });
+  }
+  function toggleNotifyPopup() {
+    var popup = document.getElementById('notify-popup');
+    if (popup) { popup.classList.toggle('show'); }
   }
 </script>
 </body>
