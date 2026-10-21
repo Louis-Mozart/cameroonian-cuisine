@@ -23,6 +23,12 @@
     .lang-btn { padding: 5px 14px; border: 2px solid var(--gold); border-radius: 20px; background: transparent; color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; transition: all .25s; }
     .lang-btn.active, .lang-btn:hover { background: var(--gold); color: var(--green-dark); }
     [data-lang="en"] .fr, [data-lang="fr"] .en { display: none; }
+    .notify-fab { position: fixed; bottom: 24px; right: 24px; z-index: 1000; width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(135deg, var(--amber), var(--gold)); color: #fff; border: none; cursor: pointer; font-size: 1.5rem; box-shadow: 0 8px 24px rgba(224,123,0,.45); display: flex; align-items: center; justify-content: center; transition: transform .25s; animation: pulse-fab 2.4s infinite; }
+    .notify-fab:hover { transform: scale(1.08); }
+    @keyframes pulse-fab { 0%,100%{ box-shadow: 0 8px 24px rgba(224,123,0,.45); } 50%{ box-shadow: 0 8px 30px rgba(224,123,0,.75); } }
+    .notify-tooltip { position: fixed; bottom: 90px; right: 24px; z-index: 1000; background: var(--green-dark); color: #fff; padding: 10px 16px; border-radius: 12px; font-size: .82rem; max-width: 200px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; transform: translateY(6px); }
+    .notify-fab:hover + .notify-tooltip, .notify-tooltip.show { opacity: 1; transform: translateY(0); }
+    @media(max-width:640px){ .notify-fab { width: 50px; height: 50px; font-size: 1.3rem; bottom: 16px; right: 16px; } .notify-tooltip { bottom: 74px; right: 16px; } }
     .hero { min-height: 100vh; background: linear-gradient(160deg, rgba(26,58,7,.82) 0%, rgba(224,123,0,.65) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px 80px; position: relative; overflow: hidden; }
     .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--cream)); }
     .hero-flag { display: flex; gap: 0; border-radius: 6px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
@@ -60,40 +66,18 @@
     .toc-card .name { font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 700; line-height: 1.3; }
 
     .monetize-section { padding: 70px 24px; background: #fff5e6; }
-    .lead-magnet { max-width: 1080px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 32px; align-items: stretch; }
-    .lead-card, .product-card { background: #fff; border-radius: 18px; padding: 32px 28px; box-shadow: 0 8px 30px rgba(0,0,0,.06); }
+    .community-card { max-width: 620px; margin: 0 auto; background: #fff; border-radius: 18px; padding: 40px 36px; box-shadow: 0 8px 30px rgba(0,0,0,.06); text-align: center; }
     .eyebrow-small { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
-    .lead-card h3, .product-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green); margin-bottom: 14px; line-height: 1.3; }
-    .lead-card p, .product-card p { color: var(--text-light); font-size: .95rem; margin-bottom: 14px; }
-    .benefit-list { list-style: none; margin-bottom: 20px; }
-    .benefit-list li { font-size: .9rem; color: var(--text); padding: 5px 0 5px 26px; position: relative; }
-    .benefit-list li::before { content: '\2713'; position: absolute; left: 0; color: var(--green); font-weight: 900; }
-    .email-form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .community-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green); margin-bottom: 14px; line-height: 1.3; }
+    .community-card p { color: var(--text-light); font-size: .95rem; margin-bottom: 18px; }
+    .email-form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; justify-content: center; }
     .email-form input[type="email"] { flex: 1; min-width: 200px; padding: 13px 16px; border: 2px solid var(--border); border-radius: 30px; font-size: .95rem; font-family: 'Lato', sans-serif; }
     .email-form input[type="email"]:focus { outline: none; border-color: var(--green); }
     .cta { border: none; cursor: pointer; font-family: 'Lato', sans-serif; }
     .cta-primary { background: var(--green); color: #fff; padding: 13px 26px; border-radius: 30px; font-weight: 800; font-size: .92rem; text-decoration: none; display: inline-block; transition: all .2s; white-space: nowrap; }
     .cta-primary:hover { background: var(--green-light); transform: translateY(-2px); }
     .privacy-note { font-size: .78rem !important; color: #999 !important; margin-top: 4px; }
-    .form-success { display: none; background: #e8f5e9; color: var(--green); border-radius: 10px; padding: 12px 16px; font-size: .9rem; font-weight: 700; margin-bottom: 10px; }
-
-    .product-section { max-width: 1080px; margin: 0 auto; padding: 80px 24px; }
-    .monetize-heading { text-align: center; max-width: 700px; margin: 0 auto 48px; }
-    .monetize-heading .eyebrow-small { text-align: center; }
-    .monetize-heading h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,3.5vw,2.6rem); color: var(--green); margin-bottom: 14px; }
-    .monetize-heading p { color: var(--text-light); }
-    .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 32px; }
-    .product-card { text-align: center; position: relative; border: 1px solid var(--border); display: flex; flex-direction: column; }
-    .product-card.featured { border: 2px solid var(--gold); transform: scale(1.03); box-shadow: 0 14px 40px rgba(224,123,0,.15); }
-    .product-badge { position: absolute; top: -13px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--green-dark); font-size: .7rem; font-weight: 900; padding: 5px 16px; border-radius: 20px; letter-spacing: .05em; white-space: nowrap; }
-    .price { font-family:'Playfair Display',serif; font-size:2.2rem; color:var(--green); font-weight:800; margin:14px 0; }
-    .featured .price { color:var(--amber); }
-    .product-card .cta-primary { margin-top: auto; }
-    .trust-row { display: flex; justify-content: center; gap: 32px; flex-wrap: wrap; text-align: center; padding: 28px 0; border-top: 1px solid var(--border); }
-    .trust-item { font-size: .85rem; color: var(--text-light); max-width: 200px; }
-    .trust-item strong { display: block; color: var(--green); margin-bottom: 4px; }
-    .mini-note { text-align: center; font-size: .78rem; color: #bbb; margin-top: 16px; }
-    @media(max-width:820px){ .lead-magnet, .product-grid { grid-template-columns: 1fr; } .product-card.featured { transform: none; } }
+    @media(max-width:480px){ .community-card { padding: 32px 22px; } }
 
     .recipes-wrapper { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
     .recipe-block { margin-bottom: 100px; scroll-margin-top: 60px; }
@@ -149,6 +133,9 @@
   <button class="lang-btn active" onclick="setLang('fr')">&#127467;&#127479; FR</button>
   <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
 </div>
+
+<button class="notify-fab" onclick="document.getElementById('free-recipes').scrollIntoView({behavior:'smooth'})" aria-label="Plus de recettes / More recipes">&#128276;</button>
+<div class="notify-tooltip"><span class="fr">Int&eacute;ress&eacute;(e) par plus de recettes&nbsp;?</span><span class="en">Interested in more recipes?</span></div>
 
 <section class="hero">
   <div class="hero-flag"><span class="f1"></span><span class="f2"></span><span class="f3"></span></div>
@@ -221,29 +208,17 @@
 </section>
 
 <section class="monetize-section" id="free-recipes">
-  <div class="lead-magnet">
-    <div class="lead-card">
-      <div class="eyebrow-small"><span class="fr">Cadeau de bienvenue</span><span class="en">Welcome gift</span></div>
-      <h3><span class="fr">5 recettes camerounaises pour commencer sans stress &#127472;&#127474;</span><span class="en">5 Cameroonian recipes to start cooking with confidence &#127472;&#127474;</span></h3>
-      <p><span class="fr">Un mini-livre PDF avec des recettes s&eacute;lectionn&eacute;es pour les d&eacute;butants, une liste de courses et des conseils pour r&eacute;ussir les premi&egrave;res cuissons.</span><span class="en">A mini PDF cookbook with beginner-friendly recipes, a shopping list and practical tips for your first dishes.</span></p>
-      <ul class="benefit-list">
-        <li><span class="fr">5 recettes faciles &agrave; suivre</span><span class="en">5 easy-to-follow recipes</span></li>
-        <li><span class="fr">Ingr&eacute;dients et quantit&eacute;s clairement indiqu&eacute;s</span><span class="en">Clear ingredients and quantities</span></li>
-        <li><span class="fr">Astuces pour savoir quand votre plat est pr&ecirc;t</span><span class="en">Doneness cues so you know when it is ready</span></li>
-      </ul>
-      <!-- STEP 1: Create a free form at https://formspree.io (or MailerLite/ConvertKit) and paste its endpoint below -->
-      <form class="email-form" action="https://formspree.io/f/YOUR_FORM_ID" method="post">
-        <input type="email" name="email" required placeholder="Votre adresse email / Your email">
-        <button class="cta cta-primary" type="submit"><span class="fr">Recevoir gratuitement</span><span class="en">Get it free</span></button>
-      </form>
-      <p class="privacy-note"><span class="fr">Pas de spam. D&eacute;sinscription en un clic.</span><span class="en">No spam. Unsubscribe anytime.</span></p>
-    </div>
-    <div class="product-card">
-      <div class="eyebrow-small"><span class="fr">Pourquoi s'inscrire&nbsp;?</span><span class="en">Why join?</span></div>
-      <h3><span class="fr">La cuisine camerounaise, m&ecirc;me loin du pays.</span><span class="en">Cameroonian cooking, even when you're far from home.</span></h3>
-      <p><span class="fr">Recevez occasionnellement de nouvelles recettes, des astuces pour trouver les ingr&eacute;dients en Europe et les nouveaut&eacute;s de T&eacute;claire Writes.</span><span class="en">Occasional new recipes, ingredient-finding tips for Europe and updates from T&eacute;claire Writes.</span></p>
-      <div class="tip-box"><span class="tip-icon">&#128154;</span><p><strong>T&eacute;claire Writes</strong><span class="fr">L'objectif n'est pas seulement de vous donner une recette, mais de vous aider &agrave; comprendre ce que vous faites en cuisine.</span><span class="en">The goal is not only to give you a recipe, but to help you understand what you are doing in the kitchen.</span></p></div>
-    </div>
+  <div class="community-card">
+    <div class="eyebrow-small"><span class="fr">Rejoignez la communaut&eacute;</span><span class="en">Join the community</span></div>
+    <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;? &#127472;&#127474;</span><span class="en">Want more Cameroonian recipes? &#127472;&#127474;</span></h3>
+    <p><span class="fr">De nouvelles recettes arrivent r&eacute;guli&egrave;rement. Laissez votre email pour &ecirc;tre pr&eacute;venu(e) d&egrave;s qu'une nouvelle recette est publi&eacute;e.</span><span class="en">New recipes are added regularly. Leave your email to be notified as soon as a new one is published.</span></p>
+    <form class="email-form" action="https://formsubmit.co/louismozart17@gmail.com" method="post">
+      <input type="hidden" name="_subject" value="Nouvel abonné — Un Voyage dans les Repas Camerounais">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://louis-mozart.github.io/cameroonian-cuisine/merci.html">
+      <input type="email" name="email" required placeholder="Votre adresse email / Your email">
+      <button class="cta cta-primary" type="submit"><span class="fr">Me pr&eacute;venir</span><span class="en">Notify me</span></button>
+    </form>
   </div>
 </section>
 
@@ -272,43 +247,6 @@
     <a href="recettes/spaghetti.html" class="toc-card"><span class="num">15</span><span class="name fr">Spaghettis Saut&eacute;s</span><span class="name en">Stir-Fry Pasta</span></a>
     <a href="recettes/kondre.html" class="toc-card"><span class="num">16</span><span class="name">Kondr&eacute;</span></a>
   </div>
-</section>
-
-<section class="product-section" id="cookbook">
-  <div class="monetize-heading">
-    <div class="eyebrow-small"><span class="fr">Le prochain niveau</span><span class="en">Go further</span></div>
-    <h2><span class="fr">Emportez le Cameroun dans votre cuisine.</span><span class="en">Bring Cameroon into your kitchen.</span></h2>
-    <p><span class="fr">Le site reste gratuit. Le livre num&eacute;rique rassemble une collection plus compl&egrave;te, pens&eacute;e pour cuisiner r&eacute;guli&egrave;rement et pas seulement pour essayer une recette.</span><span class="en">The website stays free. The digital cookbook brings together a fuller collection designed for regular cooking, not just a one-off recipe.</span></p>
-  </div>
-  <div class="product-grid">
-    <div class="product-card">
-      <h3><span class="fr">Mini Pack</span><span class="en">Starter Pack</span></h3>
-      <p><span class="fr">Les 5 recettes du guide gratuit, en version imprimable.</span><span class="en">The 5 free-guide recipes in a printable format.</span></p>
-      <div class="price">&euro;0</div>
-      <a class="cta cta-primary" href="#free-recipes"><span class="fr">Recevoir gratuitement</span><span class="en">Get it free</span></a>
-    </div>
-    <div class="product-card featured">
-      <span class="product-badge"><span class="fr">Le plus populaire</span><span class="en">Most popular</span></span>
-      <h3><span class="fr">Livre num&eacute;rique</span><span class="en">Digital Cookbook</span></h3>
-      <p><span class="fr">Les 16 recettes du site + recettes bonus, guide du d&eacute;butant, substitutions d'ingr&eacute;dients, listes de courses et conseils de pr&eacute;paration.</span><span class="en">All 16 site recipes plus bonus recipes, beginner guide, ingredient substitutions, shopping lists and preparation tips.</span></p>
-      <div class="price">&euro;9,99</div>
-      <!-- STEP 2: Create a Gumroad/Payhip product for the digital cookbook and paste its checkout link below -->
-      <a class="cta cta-primary" href="https://gumroad.com/YOUR_COOKBOOK_LINK"><span class="fr">Acheter le livre &rarr;</span><span class="en">Buy the cookbook &rarr;</span></a>
-    </div>
-    <div class="product-card">
-      <h3><span class="fr">Pack Famille</span><span class="en">Family Bundle</span></h3>
-      <p><span class="fr">Le livre + planificateur de repas + listes de courses + futures mises &agrave; jour.</span><span class="en">Cookbook + meal planner + shopping lists + future updates.</span></p>
-      <div class="price">&euro;19,99</div>
-      <!-- STEP 2b: Create a second Gumroad/Payhip product for the bundle and paste its checkout link below -->
-      <a class="cta cta-primary" href="https://gumroad.com/YOUR_BUNDLE_LINK"><span class="fr">Choisir le pack &rarr;</span><span class="en">Choose the bundle &rarr;</span></a>
-    </div>
-  </div>
-  <div class="trust-row">
-    <div class="trust-item"><strong>&#127472;&#127474; Authentique</strong><span class="fr">Recettes inspir&eacute;es de la cuisine camerounaise</span><span class="en">Recipes inspired by Cameroonian cuisine</span></div>
-    <div class="trust-item"><strong>&#128105;&#127998;&zwj;&#127859; D&eacute;butants</strong><span class="fr">Explications sans jargon culinaire</span><span class="en">No culinary jargon required</span></div>
-    <div class="trust-item"><strong>&#127757; Diaspora</strong><span class="fr">Pens&eacute; pour cuisiner loin du Cameroun</span><span class="en">Made for cooking far from Cameroon</span></div>
-  </div>
-  <p class="mini-note"><span class="fr">Les prix et liens de paiement sont &agrave; configurer avant publication.</span><span class="en">Prices and payment links should be configured before publishing.</span></p>
 </section>
 
 <div class="recipes-wrapper">
