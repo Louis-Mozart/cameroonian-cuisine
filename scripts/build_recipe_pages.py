@@ -144,6 +144,7 @@ for rid, block in articles:
   <p><span class="fr">Laissez votre email, je vous pr&eacute;viens d&egrave;s qu'une nouvelle recette sort.</span><span class="en">Leave your email and I'll let you know as soon as a new recipe is out.</span></p>
   <form class="email-form" action="https://formsubmit.co/louismozart17@gmail.com" method="post">
     <input type="hidden" name="_subject" value="Nouvel abonné (popup recette) — Un Voyage dans les Repas Camerounais">
+    <input type="hidden" name="_cc" value="graceteclaire26@gmail.com">
     <input type="hidden" name="_captcha" value="false">
     <input type="hidden" name="_next" value="https://louis-mozart.github.io/cameroonian-cuisine/merci.html">
     <input type="email" name="email" required placeholder="Votre email / Your email">
