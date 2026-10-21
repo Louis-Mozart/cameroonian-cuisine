@@ -72,6 +72,12 @@
     .lang-btn { padding: 5px 14px; border: 2px solid var(--gold); border-radius: 20px; background: transparent; color: var(--gold); font-size: .8rem; font-weight: 700; letter-spacing: .08em; cursor: pointer; transition: all .25s; }
     .lang-btn.active, .lang-btn:hover { background: var(--gold); color: var(--green-dark); }
     [data-lang="en"] .fr, [data-lang="fr"] .en { display: none; }
+    .notify-fab { position: fixed; bottom: 24px; right: 24px; z-index: 1000; width: 58px; height: 58px; border-radius: 50%; background: linear-gradient(135deg, var(--amber), var(--gold)); color: #fff; border: none; cursor: pointer; font-size: 1.5rem; box-shadow: 0 8px 24px rgba(224,123,0,.45); display: flex; align-items: center; justify-content: center; transition: transform .25s; animation: pulse-fab 2.4s infinite; }
+    .notify-fab:hover { transform: scale(1.08); }
+    @keyframes pulse-fab { 0%,100%{ box-shadow: 0 8px 24px rgba(224,123,0,.45); } 50%{ box-shadow: 0 8px 30px rgba(224,123,0,.75); } }
+    .notify-tooltip { position: fixed; bottom: 90px; right: 24px; z-index: 1000; background: var(--green-dark); color: #fff; padding: 10px 16px; border-radius: 12px; font-size: .82rem; max-width: 200px; text-align: center; box-shadow: 0 6px 20px rgba(0,0,0,.25); opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; transform: translateY(6px); }
+    .notify-fab:hover + .notify-tooltip, .notify-tooltip.show { opacity: 1; transform: translateY(0); }
+    @media(max-width:640px){ .notify-fab { width: 50px; height: 50px; font-size: 1.3rem; bottom: 16px; right: 16px; } .notify-tooltip { bottom: 74px; right: 16px; } }
     .hero { min-height: 100vh; background: linear-gradient(160deg, rgba(26,58,7,.82) 0%, rgba(224,123,0,.65) 100%), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 60px 24px 80px; position: relative; overflow: hidden; }
     .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, var(--cream)); }
     .hero-flag { display: flex; gap: 0; border-radius: 6px; overflow: hidden; margin-bottom: 28px; box-shadow: 0 4px 20px rgba(0,0,0,.4); }
@@ -107,6 +113,21 @@
     .toc-card:hover { background: var(--gold); color: var(--green-dark); transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.3); }
     .toc-card .num { font-size: .7rem; font-weight: 700; letter-spacing: .1em; opacity: .6; }
     .toc-card .name { font-family: 'Playfair Display', serif; font-size: .92rem; font-weight: 700; line-height: 1.3; }
+
+    .monetize-section { padding: 70px 24px; background: #fff5e6; }
+    .community-card { max-width: 620px; margin: 0 auto; background: #fff; border-radius: 18px; padding: 40px 36px; box-shadow: 0 8px 30px rgba(0,0,0,.06); text-align: center; }
+    .eyebrow-small { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); margin-bottom: 10px; }
+    .community-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: var(--green); margin-bottom: 14px; line-height: 1.3; }
+    .community-card p { color: var(--text-light); font-size: .95rem; margin-bottom: 18px; }
+    .email-form { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; justify-content: center; }
+    .email-form input[type="email"] { flex: 1; min-width: 200px; padding: 13px 16px; border: 2px solid var(--border); border-radius: 30px; font-size: .95rem; font-family: 'Lato', sans-serif; }
+    .email-form input[type="email"]:focus { outline: none; border-color: var(--green); }
+    .cta { border: none; cursor: pointer; font-family: 'Lato', sans-serif; }
+    .cta-primary { background: var(--green); color: #fff; padding: 13px 26px; border-radius: 30px; font-weight: 800; font-size: .92rem; text-decoration: none; display: inline-block; transition: all .2s; white-space: nowrap; }
+    .cta-primary:hover { background: var(--green-light); transform: translateY(-2px); }
+    .privacy-note { font-size: .78rem !important; color: #999 !important; margin-top: 4px; }
+    @media(max-width:480px){ .community-card { padding: 32px 22px; } }
+
     .recipes-wrapper { max-width: 960px; margin: 0 auto; padding: 60px 24px; }
     .recipe-block { margin-bottom: 100px; scroll-margin-top: 60px; }
     .recipe-block:nth-child(even) .recipe-layout { flex-direction: row-reverse; }
@@ -160,9 +181,9 @@
 .breadcrumb span { color:var(--text-light); margin:0 6px; }
 .recipe-page-header { max-width:960px;margin:0 auto;padding:20px 24px 0; }
 .back-cta { display:block; text-align:center; margin:40px auto; }
-.upsell-strip { max-width:960px;margin:60px auto 0;padding:24px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:16px;color:#fff;text-align:center; }
-.upsell-strip h3 { font-family:'Playfair Display',serif; margin-bottom:10px; color:var(--gold); }
-.upsell-strip a.cta { display:inline-block;margin-top:12px;background:var(--gold);color:var(--green-dark);padding:10px 22px;border-radius:24px;text-decoration:none;font-weight:800; }
+.community-strip { max-width:960px;margin:60px auto 0;padding:24px;background:linear-gradient(135deg,var(--green-dark),var(--green));border-radius:16px;color:#fff;text-align:center; }
+.community-strip h3 { font-family:'Playfair Display',serif; margin-bottom:10px; color:var(--gold); }
+.community-strip a.cta { display:inline-block;margin-top:12px;background:var(--gold);color:var(--green-dark);padding:10px 22px;border-radius:24px;text-decoration:none;font-weight:800; }
 </style>
 </head>
 <body data-lang="fr">
@@ -170,6 +191,9 @@
   <button class="lang-btn active" onclick="setLang('fr')">&#127467;&#127479; FR</button>
   <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
 </div>
+
+<a class="notify-fab" href="../index.html#free-recipes" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
+<div class="notify-tooltip"><span class="fr">Int&eacute;ress&eacute;(e) par plus de recettes&nbsp;?</span><span class="en">Interested in more recipes?</span></div>
 
 <nav class="site-nav">
   <a href="../index.html">← Toutes les recettes</a>
@@ -235,12 +259,13 @@
     </div>
   </div>
 </article>
+
 </div>
 
-<div class="upsell-strip">
-  <h3><span class="fr">Envie des 16 recettes en un seul livre&nbsp;?</span><span class="en">Want all 16 recipes in one book?</span></h3>
-  <p><span class="fr">Le livre num&eacute;rique inclut plus de recettes, un guide du d&eacute;butant et des listes de courses.</span><span class="en">The digital cookbook includes more recipes, a beginner's guide and shopping lists.</span></p>
-  <a class="cta" href="../index.html#cookbook"><span class="fr">Voir le livre num&eacute;rique →</span><span class="en">See the digital cookbook →</span></a>
+<div class="community-strip">
+  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;?</span><span class="en">Want more Cameroonian recipes?</span></h3>
+  <p><span class="fr">Laissez votre email pour &ecirc;tre pr&eacute;venu(e) d&egrave;s qu'une nouvelle recette est publi&eacute;e.</span><span class="en">Leave your email to be notified as soon as a new recipe is published.</span></p>
+  <a class="cta" href="../index.html#free-recipes"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
 </div>
 
 <a class="back-cta" href="../index.html"><span class="fr">&larr; Retour &agrave; toutes les recettes</span><span class="en">&larr; Back to all recipes</span></a>
