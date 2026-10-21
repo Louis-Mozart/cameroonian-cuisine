@@ -135,8 +135,21 @@ for rid, block in articles:
   <button class="lang-btn" onclick="setLang('en')">&#127468;&#127463; EN</button>
 </div>
 
-<a class="notify-fab" href="../index.html#free-recipes" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
+<a class="notify-fab" href="#" onclick="toggleNotifyPopup(); return false;" aria-label="Plus de recettes / More recipes" style="text-decoration:none;">&#128276;</a>
 <div class="notify-tooltip"><span class="fr">Int&eacute;ress&eacute;(e) par plus de recettes&nbsp;?</span><span class="en">Interested in more recipes?</span></div>
+
+<div class="notify-popup" id="notify-popup">
+  <button class="notify-popup-close" onclick="toggleNotifyPopup()" aria-label="Fermer / Close">&times;</button>
+  <h4><span class="fr">Plus de recettes&nbsp;? &#127464;&#127474;</span><span class="en">More recipes? &#127464;&#127474;</span></h4>
+  <p><span class="fr">Laissez votre email, je vous pr&eacute;viens d&egrave;s qu'une nouvelle recette sort.</span><span class="en">Leave your email and I'll let you know as soon as a new recipe is out.</span></p>
+  <form class="email-form" action="https://formsubmit.co/louismozart17@gmail.com" method="post">
+    <input type="hidden" name="_subject" value="Nouvel abonné (popup recette) — Un Voyage dans les Repas Camerounais">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://louis-mozart.github.io/cameroonian-cuisine/merci.html">
+    <input type="email" name="email" required placeholder="Votre email / Your email">
+    <button class="cta cta-primary" type="submit"><span class="fr">Me pr&eacute;venir</span><span class="en">Notify me</span></button>
+  </form>
+</div>
 
 <nav class="site-nav">
   <a href="../index.html">{'← Toutes les recettes'}</a>
@@ -153,9 +166,9 @@ for rid, block in articles:
 </div>
 
 <div class="community-strip">
-  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;?</span><span class="en">Want more Cameroonian recipes?</span></h3>
+  <h3><span class="fr">Envie de plus de recettes camerounaises&nbsp;? &#127464;&#127474;</span><span class="en">Want more Cameroonian recipes? &#127464;&#127474;</span></h3>
   <p><span class="fr">Laissez votre email pour &ecirc;tre pr&eacute;venu(e) d&egrave;s qu'une nouvelle recette est publi&eacute;e.</span><span class="en">Leave your email to be notified as soon as a new recipe is published.</span></p>
-  <a class="cta" href="../index.html#free-recipes"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
+  <a class="cta" href="#" onclick="toggleNotifyPopup(); return false;"><span class="fr">Me pr&eacute;venir →</span><span class="en">Notify me →</span></a>
 </div>
 
 <a class="back-cta" href="../index.html"><span class="fr">&larr; Retour &agrave; toutes les recettes</span><span class="en">&larr; Back to all recipes</span></a>
@@ -173,6 +186,10 @@ for rid, block in articles:
     document.querySelectorAll('.lang-btn').forEach(function(btn) {{
       btn.classList.toggle('active', btn.textContent.toLowerCase().indexOf(lang) !== -1);
     }});
+  }}
+  function toggleNotifyPopup() {{
+    var popup = document.getElementById('notify-popup');
+    if (popup) {{ popup.classList.toggle('show'); }}
   }}
 </script>
 </body>
